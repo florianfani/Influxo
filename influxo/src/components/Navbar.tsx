@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Navbar = () => {
+export const Navbar: React.FC = () => {
   return (
     <div className="navbar-wrapper flex justify-between px-[16%] py-7">
       <div>
