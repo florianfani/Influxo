@@ -1,29 +1,101 @@
-import React, { useState } from 'react';
-import RectangleShape from '../assets/decorations/RectangleShape.png';
+import React, { useState } from "react";
+import RectangleShape from "../assets/decorations/RectangleShape.png";
+import Swal from "sweetalert2";
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    companyName: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    companyName: "",
+    message: "",
+    phoneNumber: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+    phoneNumber: "",
+  });
+
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
+
+    // Reset error state for the field
+    setErrors({
+      ...errors,
+      [e.target.name]: false,
+    });
+
+    // Reset error message
+    setErrorMessage("");
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Regex patterns
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phonePattern = /^\+?[0-9]{7,15}$/;
+
+    // Form validation
+    const newErrors = {
+      name: !formData.name ? "Name is required." : "",
+      email: !formData.email
+        ? "Email is required."
+        : !emailPattern.test(formData.email)
+        ? "Invalid email format."
+        : "",
+      subject: !formData.subject ? "Subject is required." : "",
+      message: !formData.message ? "Message is required." : "",
+      phoneNumber: !formData.phoneNumber
+        ? "Phone number is required."
+        : !phonePattern.test(formData.phoneNumber)
+        ? "Invalid phone number format."
+        : "",
+    };
+
+    let errMessage = "";
+    switch (true) {
+      case !!newErrors.name:
+        errMessage = newErrors.name;
+        break;
+      case !!newErrors.email:
+        errMessage = newErrors.email;
+        break;
+      case !!newErrors.subject:
+        errMessage = newErrors.subject;
+        break;
+      case !!newErrors.message:
+        errMessage = newErrors.message;
+        break;
+      case !!newErrors.phoneNumber:
+        errMessage = newErrors.phoneNumber;
+        break;
+      default:
+        errMessage = "";
+    }
+
+    if (errMessage) {
+      setErrors(newErrors);
+      setErrorMessage(errMessage);
+      return;
+    }
+
     try {
-      const response = await fetch('http://localhost:3001/api/mail', {
-        method: 'POST',
+      const response = await fetch("http://localhost:3001/api/mail", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           subject: formData.subject,
@@ -32,121 +104,203 @@ const ContactForm: React.FC = () => {
             <p><strong>Name:</strong> ${formData.name}</p>
             <p><strong>Email:</strong> ${formData.email}</p>
             <p><strong>Company Name:</strong> ${formData.companyName}</p>
+            <p><strong>Phone Number:</strong> ${formData.phoneNumber}</p>
             <p><strong>Message:</strong> ${formData.message}</p>
-          `
-        })
+          `,
+        }),
       });
-      console.log(response);
       if (response.ok) {
-        alert('Email sent successfully!');
+        Swal.fire({
+          icon: "success",
+          title: "Email Sent",
+          text: "Your email has been sent successfully!",
+        });
       } else {
-        alert('Failed to send email.');
+        Swal.fire({
+          icon: "error",
+          title: "Email Failed",
+          text: "Failed to send email. Please try again later.",
+        });
       }
     } catch (error) {
-      console.error('Error sending email:', error);
-      alert('Error sending email.');
+      console.error("Error sending email:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "An error occurred while sending the email. Please try again later.",
+      });
     }
   };
 
   return (
-    <div className="flex flex-col items-center justify-center py-10 bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-6xl">
-        <h2 className="text-3xl font-bold mb-4 text-center">Have a project in mind? Drop me a line.</h2>
-        <p className="text-center text-gray-600 mb-8">Got a project? Drop me a line if you want to work together on something exciting. Or do you need our help? Feel free to contact us.</p>
-        
-        <div className="flex flex-col justify-between md:flex-row">
+    <div className="flex flex-col items-center justify-center py-10 px-[16%]">
+      <div className="bg-white w-full flex flex-col items-center justify-center max-w-6xl">
+        <div className="flex flex-col items-center justify-center max-w-[60%]">
+          <h2 className="text-[56px] font-bold mb-4 text-center">
+            Have a project in mind? Drop us a line.
+          </h2>
+          <p className="text-center text-gray-600 mb-8 lg:max-w-[700px]">
+            Got a project? Drop me a line if you want to work together on
+            something exciting. Or do you need our help? Feel free to contact
+            us.
+          </p>
+        </div>
+        <div className="flex flex-col justify-between lg:flex-row space-y-8 lg:space-y-0 w-full">
           {/* Left Column */}
-          <div className="bg-blue-900 text-white p-8 flex flex-col justify-between rounded-l-lg w-full md:w-1/2 relative">
-          {/* img */}
-          <div className="absolute -top-5 -right-5">
-            <img src={RectangleShape} alt="Contact Us" className="w-32 h-36" />
-          </div>
-          {/* Title */}
-            <div className="ml-4 mt-3"> 
-            <h3 className="text-3xl font-bold">Get in touch</h3>
+          <div className="bg-gradient-to-br from-[#073B89] to-[#1b5dba] text-white p-8 flex flex-col justify-between rounded-l-3xl w-full lg:w-1/2 relative">
+            {/* Image */}
+            <div className="absolute -top-10 -right-10 hidden sm:block">
+              <img
+                src={RectangleShape}
+                alt="Contact Us"
+                className="w-48 h-54"
+              />
             </div>
-            {/* Our contact info */}
-            <div className="ml-4 text-xl">
 
-            <p className="flex items-center mb-4">
-                <div className="rounded-full bg-[rgba(255,255,255,0.15)] flex items-center justify-center p-3">
-                    <span className="material-icons">email</span>
-                </div>
-                <div className="flex flex-col ml-3">
-              <span className="text-[rgba(255,255,255,0.70)] text-sm">EMAIL US</span>
-              <span>influxoks@gmail.com</span>
-                </div>
-            </p>
-            <p className="flex items-center mb-4">
-                <div className="rounded-full bg-[rgba(255,255,255,0.15)] flex items-center justify-center p-3">
-                    <span className="material-icons">phone</span>
-                </div>
-                <div className="flex flex-col ml-3">
-              <span className="text-[rgba(255,255,255,0.70)] text-sm">PHONE NUMBER</span>
-              <span className="text-sm">+383 48 370 393 / +383 45 557 838</span>
-                </div>
-            </p>
-            <p className="flex items-center mb-4">
-                <div className="rounded-full bg-[rgba(255,255,255,0.15)] flex items-center justify-center p-3">
-                    <span className="material-icons">location_on</span>
-                </div>
-                <div className="flex flex-col ml-3">
-              <span className="text-[rgba(255,255,255,0.70)] text-sm">Kosove Ferizaj</span>
-              <span className="text-sm">RR. Ahmet Kaciku</span>
-                </div>
-            </p>
+            {/* Title */}
+            <div className="ml-4 mt-3">
+              <h3 className="text-[36px] font-bold">Get in touch</h3>
             </div>
-            <div className="flex mt-4 space-x-4">
-              <a href="#" className="text-white"><i className="fab fa-facebook"></i></a>
-              <a href="#" className="text-white"><i className="fab fa-twitter"></i></a>
-              <a href="#" className="text-white"><i className="fab fa-linkedin"></i></a>
-              <a href="#" className="text-white"><i className="fab fa-instagram"></i></a>
+
+            {/* Contact Info */}
+            <div className="ml-4 text-lg flex flex-col gap-4">
+              <div className="flex items-center mb-4">
+                <div className="rounded-full bg-[rgba(255,255,255,0.15)] flex items-center justify-center p-4">
+                  <span className="material-icons">email</span>
+                </div>
+                <div className="flex flex-col ml-3">
+                  <span className="text-[rgba(255,255,255,0.70)] text-sm">
+                    EMAIL US
+                  </span>
+                  <span className="text-[20px]">influxoks@gmail.com</span>
+                </div>
+              </div>
+              <div className="flex items-center mb-4">
+                <div className="rounded-full bg-[rgba(255,255,255,0.15)] flex items-center justify-center p-4">
+                  <span className="material-icons">phone</span>
+                </div>
+                <div className="flex flex-col ml-3">
+                  <span className="text-[rgba(255,255,255,0.70)] text-sm">
+                    PHONE NUMBER
+                  </span>
+                  <div className="text-[18px] flex flex-col">
+                    <span>+383 48 370 393</span>
+                    <span>+383 45 557 838</span>
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center mb-4">
+                <div className="rounded-full bg-[rgba(255,255,255,0.15)] flex items-center justify-center p-4">
+                  <span className="material-icons">location_on</span>
+                </div>
+                <div className="flex flex-col ml-3">
+                  <span className="text-[rgba(255,255,255,0.70)] text-sm">
+                    Kosove Ferizaj
+                  </span>
+                  <span className="text-[20px]">RR. Ahmet Kaciku</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Social Icons */}
+            <div className="flex flex-col mt-4 space-x-4">
+              <div className="flex items-center mb-4 ml-4">
+                <span className="border-t border-white w-8 mr-2"></span>
+                <span className="text-white text-sm">Connect with us:</span>
+              </div>
+              <div className="flex gap-2 mb-4">
+                <div className="rounded-md bg-[rgba(255,255,255,0.15)] flex items-center justify-center p-2 px-3 cursor-pointer hover:scale-105 duration-300 hover:bg-[rgba(255,255,255,0.25)]">
+                  <a href="#" className="text-white text-xl">
+                    <i className="fab fa-facebook"></i>
+                  </a>
+                </div>
+                <div className="rounded-md bg-[rgba(255,255,255,0.15)] flex items-center justify-center p-2 px-3 cursor-pointer hover:scale-105 duration-300 hover:bg-[rgba(255,255,255,0.25)]">
+                  <a href="#" className="text-white text-xl">
+                    <i className="fab fa-x-twitter"></i>
+                  </a>
+                </div>
+                <div className="rounded-md bg-[rgba(255,255,255,0.15)] flex items-center justify-center p-2 px-3 cursor-pointer hover:scale-105 duration-300 hover:bg-[rgba(255,255,255,0.25)]">
+                  <a href="#" className="text-white text-xl">
+                    <i className="fab fa-linkedin"></i>
+                  </a>
+                </div>
+                <div className="rounded-md bg-[rgba(255,255,255,0.15)] flex items-center justify-center p-2 px-3 cursor-pointer hover:scale-105 duration-300 hover:bg-[rgba(255,255,255,0.25)]">
+                  <a
+                    href="https://www.instagram.com/influxoks/"
+                    target="_blank"
+                    className="text-white text-xl"
+                  >
+                    <i className="fab fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-          
+
           {/* Right Column */}
-          <div className="bg-gray-100 p-8 rounded-r-lg w-full md:w-1/2">
+          <div className="bg-gray-100 p-8 rounded-r-3xl w-full lg:w-1/2">
             <form onSubmit={handleSubmit}>
-              <div className="mb-4 flex justify-between">
-                <div className="mr-4">
-                <label className="block text-gray-700">Name</label>
+              <div className="mb-4 flex flex-col md:flex-row justify-between space-y-4 md:space-y-0">
+                <div className="w-full md:mr-4">
+                  <label className="block text-gray-700">Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500 ${
+                      errors.name ? "border-red-500" : ""
+                    }`}
+                    placeholder="Full name"
+                  />
+                </div>
+                <div className="w-full">
+                  <label className="block text-gray-700">Email</label>
+                  <input
+                    type="text"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500 ${
+                      errors.email ? "border-red-500" : ""
+                    }`}
+                    placeholder="Email address"
+                  />
+                </div>
+              </div>
+
+              <div className="mb-4">
+                <label className="block text-gray-700">Phone Number</label>
                 <input
                   type="text"
-                  name="name"
-                  value={formData.name}
+                  name="phoneNumber"
+                  value={formData.phoneNumber}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
-                  placeholder="Full name"
-                  />
-                  </div>
-                  <div>
-                    
-                <label className="block text-gray-700">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
-                  placeholder="Email address"
-                  />
-                  </div>
+                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500 ${
+                    errors.subject ? "border-red-500" : ""
+                  }`}
+                  placeholder="Phone Number"
+                />
               </div>
+
               <div className="mb-4">
-              </div>
-              <div className="mb-4">
-                <label className="block text-gray-700">Subjects</label>
+                <label className="block text-gray-700">Subject</label>
                 <input
                   type="text"
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500 ${
+                    errors.subject ? "border-red-500" : ""
+                  }`}
                   placeholder="Subject"
                 />
               </div>
+
               <div className="mb-4">
-                <label className="block text-gray-700">Company Name</label>
+                <label className="block text-gray-700">
+                  Company Name (Optional)
+                </label>
                 <input
                   type="text"
                   name="companyName"
@@ -156,22 +310,28 @@ const ContactForm: React.FC = () => {
                   placeholder="Brand/Company/Product Name"
                 />
               </div>
+
               <div className="mb-4">
                 <label className="block text-gray-700">Message</label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500 resize-none overflow-auto h-28 ${
+                    errors.message ? "border-red-500" : ""
+                  }`}
                   placeholder="Tell us about your project..."
                 ></textarea>
               </div>
-              <button
-                type="submit"
-                className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700"
-              >
-                Send Message
-              </button>
+              <div className="flex py-6">
+                <button
+                  type="submit"
+                  className="bg-gradient-to-br from-[#1b5dba] to-[#073B89] text-white py-3 px-6 rounded-lg hover:from-[#4a8ef1] hover:to-[#3a7ed9] hover:scale-105 duration-300 flex items-center justify-center"
+                >
+                  Send Message <i className="material-icons ml-3">send</i>
+                </button>
+              </div>
+              <p className="text-red-500 text-xs">{errorMessage}</p>
             </form>
           </div>
         </div>

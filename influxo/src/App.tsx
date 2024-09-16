@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import ContactForm from "./pages/ContactUs";
+import "./App.css";
 // You can import other pages here as needed
 // import HomePage from './pages/HomePage';
 // import AboutPage from './pages/AboutPage';
