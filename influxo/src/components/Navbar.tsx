@@ -17,7 +17,10 @@ export const Navbar: React.FC = () => {
         <h2 className="text-[#42526B] cursor-pointer hover:text-[#0B63E5] hover:duration-300 duration-300">
           Home
         </h2>
-        <h2 className="text-[#42526B] cursor-pointer hover:text-[#0B63E5] hover:duration-300 duration-300">
+        <h2
+          className="text-[#42526B] cursor-pointer hover:text-[#0B63E5] hover:duration-300 duration-300"
+          onClick={() => redirect("/projects")}
+        >
           Projects
         </h2>
         <h2 className="text-[#42526B] cursor-pointer hover:text-[#0B63E5] hover:duration-300 duration-300">
