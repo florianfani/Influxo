@@ -7,7 +7,7 @@ import "./App.css";
 import Projects from "./pages/Projects";
 import SingleProductPage from "./pages/SingleProductPage";
 // You can import other pages here as needed
-// import HomePage from './pages/HomePage';
+import Home from "./pages/Home";
 // import AboutPage from './pages/AboutPage';
 
 function App() {
@@ -20,6 +20,9 @@ function App() {
 
         <Routes>
           {/* Define routes here */}
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<ContactForm />} />{" "}
+          {/* Contact Page */}
           {/* <Route path="/" element={<HomePage />} /> Home Page */}
           <Route path="/contact" element={<ContactForm />} />
           <Route path="/projects" element={<Projects />} /> {/* Contact Page */}

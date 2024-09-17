@@ -1,7 +1,7 @@
-import express from 'express';
-import nodemailer from 'nodemailer';
-import dotenv from 'dotenv';
-import cors from 'cors';
+import express from "express";
+import nodemailer from "nodemailer";
+import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config();
 
@@ -17,17 +17,17 @@ const sendMail = async (req, res) => {
 
   // Create a transporter object using SMTP transport
   let transporter = nodemailer.createTransport({
-    service: 'gmail', // e.g., 'gmail'
+    service: "gmail", // e.g., 'gmail'
     auth: {
-      user: 'influxoks@gmail.com', // your email
+      user: "influxoks@gmail.com", // your email
       pass: process.env.GMAIL_APP_PASSWORD, // your email password from .env
     },
   });
 
   // Email options
   let mailOptions = {
-    from: 'influxoks@gmail.com', // sender address
-    to: 'influxoks@gmail.com', // list of receivers
+    from: "influxoks@gmail.com", // sender address
+    to: "influxoks@gmail.com", // list of receivers
     subject: subject, // Subject line
     html: html, // html body
   };
@@ -35,17 +35,17 @@ const sendMail = async (req, res) => {
   // Send mail with defined transport object
   try {
     let info = await transporter.sendMail(mailOptions);
-    res.status(200).send({ message: 'Email sent', info });
+    res.status(200).send({ message: "Email sent", info });
   } catch (error) {
-    res.status(500).send({ message: 'Error sending email', error });
+    res.status(500).send({ message: "Error sending email", error });
   }
 };
 
 // Route to handle mail sending
-app.post('/api/mail', sendMail);
+app.post("/api/mail", sendMail);
 
-app.get('/', (req, res) => {
-  res.send('Hello from the backend!');
+app.get("/", (req, res) => {
+  res.send("Hello from the backend!");
 });
 
 app.listen(port, () => {
