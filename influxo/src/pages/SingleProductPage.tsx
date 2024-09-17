@@ -1,18 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import WorkTogether from "../components/WorkTogether";
+import projects from "../assets/projects"; // Import the projects
 
 const SingleProductPage: React.FC = () => {
-  const [products, setProducts] = useState<
-    {
-      id: number;
-      title: string;
-      shortDescription: string;
-      details: string;
-      image: string;
-      longDescription: string;
-    }[]
-  >([]);
   const { id } = useParams();
   const [product, setProduct] = useState<{
     id: number;
@@ -22,19 +13,13 @@ const SingleProductPage: React.FC = () => {
     image: string;
     longDescription: string;
   } | null>(null);
-  useEffect(() => {
-    fetch("/projects.json")
-      .then((response) => response.json())
-      .then((data) => setProducts(data))
-      .catch((error) => console.error("Error fetching projects:", error));
-  }, []);
 
   useEffect(() => {
-    const product = products.find(
+    const product = projects.find(
       (product) => product.id === parseInt(id || "0")
     );
     setProduct(product || null);
-  }, [products, id]);
+  }, [id]);
 
   return (
     <div>
