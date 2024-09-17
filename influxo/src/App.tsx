@@ -4,7 +4,7 @@ import { Footer } from "./components/Footer";
 import ContactForm from "./pages/ContactUs";
 import "./App.css";
 // You can import other pages here as needed
-// import HomePage from './pages/HomePage';
+import Home from "./pages/Home";
 // import AboutPage from './pages/AboutPage';
 
 function App() {
@@ -17,8 +17,9 @@ function App() {
 
         <Routes>
           {/* Define routes here */}
-          {/* <Route path="/" element={<HomePage />} /> Home Page */}
-          <Route path="/contact" element={<ContactForm />} /> {/* Contact Page */}
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<ContactForm />} />{" "}
+          {/* Contact Page */}
           {/* <Route path="/about" element={<AboutPage />} /> About Page */}
           {/* Add other routes as needed */}
         </Routes>
