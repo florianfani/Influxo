@@ -1,8 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import Projects1 from "../assets/decorations/SVG/Projects1.svg";
 import Projects2 from "../assets/decorations/SVG/Projects2.svg";
 import Projects3 from "../assets/decorations/SVG/Projects3.svg";
 import WorkTogether from "../components/WorkTogether";
 const ProjectsSection = () => {
+  const navigate = useNavigate();
+
+  const redirect = (id: number) => {
+    navigate(`/projects/${id}`);
+  };
   return (
     <div>
       <div className="projects-wrapper px-[16%] py-10">
@@ -28,7 +34,10 @@ const ProjectsSection = () => {
                   bestselling books: "The Art of Less Doing" and "The
                   Replaceable Founder".
                 </p>
-                <button className="bg-[#F0F5FF] text-[#0B63E5] font-bold py-2 px-4 rounded-lg w-[200px] hover:bg-blue-600 hover:text-white text-center text-md duration-300">
+                <button
+                  className="bg-[#F0F5FF] text-[#0B63E5] font-bold py-2 px-4 rounded-lg w-[200px] hover:bg-blue-600 hover:text-white text-center text-md duration-300"
+                  onClick={() => redirect(1)}
+                >
                   View Case Study
                   <i className="fas fa-arrow-right text-sm ml-2"></i>
                 </button>
@@ -50,7 +59,10 @@ const ProjectsSection = () => {
                   in the south of Switzerland.
                 </p>
               </div>
-              <button className="bg-[#F0F5FF] text-[#0B63E5] font-bold py-2 px-4 rounded-lg w-[200px] hover:bg-blue-600 hover:text-white text-center text-md duration-300">
+              <button
+                className="bg-[#F0F5FF] text-[#0B63E5] font-bold py-2 px-4 rounded-lg w-[200px] hover:bg-blue-600 hover:text-white text-center text-md duration-300"
+                onClick={() => redirect(2)}
+              >
                 View Case Study
                 <i className="fas fa-arrow-right text-sm ml-2"></i>
               </button>
@@ -78,7 +90,10 @@ const ProjectsSection = () => {
                   public transport and tourism sector in Switzerland. They
                   needed a completely new design for their website.
                 </p>
-                <button className="bg-[#F0F5FF] text-[#0B63E5] font-bold py-2 px-4 rounded-lg w-[200px] hover:bg-blue-600 hover:text-white text-center text-md duration-300">
+                <button
+                  className="bg-[#F0F5FF] text-[#0B63E5] font-bold py-2 px-4 rounded-lg w-[200px] hover:bg-blue-600 hover:text-white text-center text-md duration-300"
+                  onClick={() => redirect(3)}
+                >
                   View Case Study
                   <i className="fas fa-arrow-right text-sm ml-2"></i>
                 </button>
