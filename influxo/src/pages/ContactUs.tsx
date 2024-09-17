@@ -92,7 +92,7 @@ const ContactForm: React.FC = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:3001/api/mail", {
+      const response = await fetch("/api/mail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
