@@ -47,16 +47,29 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex flex-col justify-between gap-y-2">
-            <button className="text-sm font-medium bg-[#1DA1F214] rounded-md text-[#061C3D] px-3 py-2 hover:opacity-90 transform hover:scale-105 duration-300">
+            <a
+              href="#"
+              className="text-sm font-medium bg-[#1DA1F214] rounded-md text-[#061C3D] px-3 py-2 hover:opacity-90 transform hover:scale-105 duration-300"
+            >
               Facebook
-            </button>
-            <button className="text-sm font-medium bg-[#0E76A8] rounded-md text-[#FFFFFF] px-3 py-2 hover:opacity-90 transform hover:scale-105 duration-300">
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              className="text-sm font-medium bg-[#0E76A8] rounded-md text-[#FFFFFF] px-3 py-2 hover:opacity-90 transform hover:scale-105 duration-300"
+            >
               Linkedin
-            </button>
-            <button className="text-sm font-medium bg-[#1DA1F214] rounded-md text-[#061C3D] px-3 py-2 hover:opacity-90 transform hover:scale-105 duration-300">
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              className="text-sm font-medium bg-[#1DA1F214] rounded-md text-[#061C3D] px-3 py-2 hover:opacity-90 transform hover:scale-105 duration-300"
+            >
               X
-            </button>
-            <button
+            </a>
+            <a
+              href="https://www.instagram.com/influxoks/"
+              target="_blank"
               className="text-sm font-medium bg-[#1DA1F214] rounded-md text-[#061C3D] px-3 py-2 hover:opacity-90 transform hover:scale-105 duration-300"
               style={{
                 background:
@@ -64,7 +77,7 @@ export const Footer: React.FC = () => {
               }}
             >
               Instagram
-            </button>
+            </a>
           </div>
         </div>
       </div>
