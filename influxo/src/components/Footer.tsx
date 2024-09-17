@@ -1,5 +1,5 @@
 import React from "react";
-
+import influxo from "../assets/decorations/Influxo SVG.svg";
 // The background color of the footer will change to its original color.. this is a demo
 
 export const Footer: React.FC = () => {
@@ -7,8 +7,10 @@ export const Footer: React.FC = () => {
     <div className="footer-wrapper px-[16%] bg-[#e8e9eb]">
       <div className="justify-between flex py-[125px] border-b border-[#9BA4B1]">
         <div className="w-[20%] ">
-          <h2 className="text-[#061C3D] text-4xl font-medium mb-5">influxo</h2>
-          <p className="text-[#6A778B] mb-5">
+          <div className="mb-5 items-end">
+            <img className="w-[60%]" src={influxo} alt="logo image" />
+          </div>
+          <p className="text-[#6A778B] mb-8">
             We build readymade websites, mobile applications, and elaborate
             online business services
           </p>
@@ -18,14 +20,14 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex justify-between w-[70%]">
+        <div className="flex justify-between w-[70%] mt-4">
           <div className="flex flex-col gap-y-2">
             <h2 className="font-medium text-[#061C3D] mb-3">Quick Links</h2>
-            <h2 className="text-[#838E9E]">- Portfolio</h2>
-            <h2 className="text-[#838E9E]">About</h2>
+            <h2 className="text-[#838E9E]">Home</h2>
+            <h2 className="text-[#838E9E]">About Us</h2>
             <h2 className="text-[#838E9E]">Services</h2>
-            <h2 className="text-[#838E9E]">Pricing Plans</h2>
-            <h2 className="text-[#838E9E]">Contact</h2>
+            <h2 className="text-[#838E9E]">Projects</h2>
+            <h2 className="text-[#838E9E]">Contact Us</h2>
           </div>
 
           <div className="flex flex-col gap-y-2">

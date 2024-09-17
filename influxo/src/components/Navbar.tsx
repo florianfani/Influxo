@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import influxo from "../assets/decorations/Influxo SVG.svg";
 
 export const Navbar: React.FC = () => {
   const navigate = useNavigate();
@@ -10,8 +11,8 @@ export const Navbar: React.FC = () => {
 
   return (
     <div className="navbar-wrapper flex justify-between px-[16%] py-7">
-      <div>
-        <h1 className="text-4xl font-medium text-[#061C3D]">influxo</h1>
+      <div className="">
+        <img className="w-[40%]" src={influxo} alt="logo image" />
       </div>
       <div className="flex gap-x-10 items-center">
         <h2 className="text-[#42526B] cursor-pointer hover:text-[#0B63E5] hover:duration-300 duration-300">
