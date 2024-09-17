@@ -1,4 +1,6 @@
 import AboutImage from "../assets/decorations/SVG/chatbot1.svg"; // Adjust the path as necessary
+import Project1 from "../assets/decorations/SVG/Projects1.svg";
+import WorkTogether from "../components/WorkTogether";
 
 const About = () => {
   return (
@@ -19,66 +21,48 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="container flex flex-col md:flex-row items-center mt-10">
-        <div className="md:w-1/2 flex justify-center items-center">
-          <div className="w-3/4 h-3/4 bg-gray-200"></div>{" "}
-          {/* Placeholder for image */}
-        </div>
-        <div className="md:w-1/2 pl-10">
-          <p className="text-md text-[#42526B] mb-6">
+      <div className="flex flex-col w-full px-[16%] mt-10 justify-center items-center">
+        <img
+          src={Project1}
+          alt="About Us"
+          className="w-full h-[250px] mb-6 object-cover"
+        />
+        <div>
+          <p className="text-md text-[#42526B]">
             influxo is a dynamic web development and digital solutions company
             based in Ferizaj, Kosova. We specialize in creating tailored
             websites, apps, and eCommerce platforms that drive business growth
             and digital transformation. With a team of skilled developers,
             designers, and strategists, we combine creativity and technology to
             deliver high-quality, user-friendly solutions that meet the unique
-            needs of each client.
+            needs of each client. At Influxo, we are committed to providing
+            innovative web development services that not only look great but
+            also perform exceptionally well. From responsive designs to SEO
+            optimization, we focus on delivering results that help businesses
+            enhance their online presence and reach their full potential. We
+            collaborate closely with our clients to understand their goals,
+            ensuring that each project is crafted with precision and care. As a
+            trusted partner in the digital space, we also offer ongoing support
+            and maintenance to keep your website running smoothly and securely.
+            Whether you’re a small startup or an established brand, Influxo is
+            here to help you succeed in the ever-evolving digital landscape.
           </p>
-          <p className="text-md text-[#42526B] mb-6">
-            At Influxo, we are committed to providing innovative web development
-            services that not only look great but also perform exceptionally
-            well. From responsive designs to SEO optimization, we focus on
-            delivering results that help businesses enhance their online
-            presence and reach their full potential. We collaborate closely with
-            our clients to understand their goals, ensuring that each project is
-            crafted with precision and care.
-          </p>
-          <p className="text-md text-[#42526B] mb-6">
-            As a trusted partner in the digital space, we also offer ongoing
-            support and maintenance to keep your website running smoothly and
-            securely. Whether you’re a small startup or an established brand,
-            Influxo is here to help you succeed in the ever-evolving digital
-            landscape.
-          </p>
+          <div className="flex justify-center gap-10 my-10 items-center">
+            <img src={Project1} alt="Photo" className="w-1/2 h-full" />
+            <p>
+              Our mission is to provide innovative web development services that
+              drive business growth and digital transformation. We focus on
+              delivering results that help businesses enhance their online
+              presence and reach their full potential. Our mission is to provide
+              innovative web development services that drive business growth and
+              digital transformation. We focus on delivering results that help
+              businesses enhance their online presence and reach their full
+              potential.
+            </p>
+          </div>
         </div>
       </div>
-
-      <div className="container flex flex-col md:flex-row items-center mt-10">
-        <div className="md:w-1/2 pl-10">
-          <p className="text-md text-[#42526B] mb-6">
-            influxo is a dynamic web development and digital solutions company
-            based in Ferizaj, Kosova. We specialize in creating tailored
-            websites, apps, and eCommerce platforms that drive business growth
-            and digital transformation. With a team of skilled developers,
-            designers, and strategists, we combine creativity and technology to
-            deliver high-quality, user-friendly solutions that meet the unique
-            needs of each client.
-          </p>
-          <p className="text-md text-[#42526B] mb-6">
-            At Influxo, we are committed to providing innovative web development
-            services that not only look great but also perform exceptionally
-            well. From responsive designs to SEO optimization, we focus on
-            delivering results that help businesses enhance their online
-            presence and reach their full potential. We collaborate closely with
-            our clients to understand their goals, ensuring that each project is
-            crafted with precision and care.
-          </p>
-        </div>
-        <div className="md:w-1/2 flex justify-center items-center">
-          <div className="w-3/4 h-3/4 bg-gray-200"></div>{" "}
-          {/* Placeholder for image */}
-        </div>
-      </div>
+      <WorkTogether />
     </div>
   );
 };
