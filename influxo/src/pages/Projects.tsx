@@ -1,4 +1,3 @@
-import React from "react";
 import Projects1 from "../assets/decorations/SVG/Projects1.svg";
 import Projects2 from "../assets/decorations/SVG/Projects2.svg";
 import Projects3 from "../assets/decorations/SVG/Projects3.svg";
