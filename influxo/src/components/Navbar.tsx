@@ -15,7 +15,10 @@ export const Navbar: React.FC = () => {
         <img className="w-[40%]" src={influxo} alt="logo image" />
       </div>
       <div className="flex gap-x-10 items-center">
-        <h2 className="text-[#42526B] cursor-pointer hover:text-[#0B63E5] hover:duration-300 duration-300">
+        <h2
+          className="text-[#42526B] cursor-pointer hover:text-[#0B63E5] hover:duration-300 duration-300"
+          onClick={() => redirect("/")}
+        >
           Home
         </h2>
         <h2
@@ -24,10 +27,16 @@ export const Navbar: React.FC = () => {
         >
           Projects
         </h2>
-        <h2 className="text-[#42526B] cursor-pointer hover:text-[#0B63E5] hover:duration-300 duration-300">
+        <h2
+          className="text-[#42526B] cursor-pointer hover:text-[#0B63E5] hover:duration-300 duration-300"
+          onClick={() => redirect("/services")}
+        >
           Services
         </h2>
-        <h2 className="text-[#42526B] cursor-pointer hover:text-[#0B63E5] hover:duration-300 duration-300">
+        <h2
+          className="text-[#42526B] cursor-pointer hover:text-[#0B63E5] hover:duration-300 duration-300"
+          onClick={() => redirect("/about")}
+        >
           About Us
         </h2>
         <button
