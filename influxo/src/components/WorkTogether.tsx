@@ -1,7 +1,13 @@
 import React from "react";
 import WorkTogetherSVG from "../assets/decorations/SVG/WorkTogether.svg";
+import { useNavigate } from "react-router-dom";
 
 const WorkTogether: React.FC = () => {
+  const navigate = useNavigate();
+
+  const redirectToContact = () => {
+    navigate("/contact");
+  };
   return (
     <div className="flex items-center justify-center w-full h-[500px] bg-[#061C3D] text-white">
       <div className="flex items-center justify-center p-6 w-[80%]">
@@ -21,12 +27,12 @@ const WorkTogether: React.FC = () => {
             We build readymade websites, mobile applications, and elaborate
             online business services.
           </p>
-          <a
-            href="/contact"
+          <button
             className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-500 transition-colors duration-300"
+            onClick={redirectToContact}
           >
             Let's Work Together →
-          </a>
+          </button>
         </div>
       </div>
     </div>
