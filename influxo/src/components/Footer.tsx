@@ -1,14 +1,30 @@
 import React from "react";
 import influxo from "../assets/decorations/Influxo SVG.svg";
-// The background color of the footer will change to its original color.. this is a demo
+import { useNavigate, useLocation } from "react-router-dom";
 
 export const Footer: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const redirect = (path: string) => {
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    navigate(path);
+  };
+
+  const isActive = (path: string) => location.pathname === path;
+
   return (
     <div className="footer-wrapper px-[16%] bg-[#e8e9eb]">
       <div className="justify-between flex py-[125px] border-b border-[#9BA4B1]">
         <div className="w-[20%] ">
           <div className="mb-5 items-end">
-            <img className="w-[60%]" src={influxo} alt="logo image" />
+            <img
+              className="w-[60%] cursor-pointer"
+              src={influxo}
+              alt="logo image"
+              onClick={() => redirect("/")}
+            />
           </div>
           <p className="text-[#6A778B] mb-8">
             We build readymade websites, mobile applications, and elaborate
@@ -19,29 +35,92 @@ export const Footer: React.FC = () => {
         <div className="flex justify-between w-[70%] mt-4">
           <div className="flex flex-col gap-y-2">
             <h2 className="font-medium text-[#061C3D] mb-3">Quick Links</h2>
-            <h2 className="text-[#838E9E]">Home</h2>
-            <h2 className="text-[#838E9E]">About Us</h2>
-            <h2 className="text-[#838E9E]">Services</h2>
-            <h2 className="text-[#838E9E]">Projects</h2>
-            <h2 className="text-[#838E9E]">Contact Us</h2>
+            <h2
+              className={`cursor-pointer hover:text-[#0B63E5] duration-300 ${
+                isActive("/") ? "font-bold text-[#0B63E5]" : "text-[#838E9E]"
+              }`}
+              onClick={() => redirect("/")}
+            >
+              {isActive("/") ? "- Home" : "Home"}
+            </h2>
+            <h2
+              className={`cursor-pointer hover:text-[#0B63E5] duration-300 ${
+                isActive("/about")
+                  ? "font-bold text-[#0B63E5]"
+                  : "text-[#838E9E]"
+              }`}
+              onClick={() => redirect("/about")}
+            >
+              {isActive("/about") ? "- About Us" : "About Us"}
+            </h2>
+            <h2
+              className={`cursor-pointer hover:text-[#0B63E5] duration-300 ${
+                isActive("/services")
+                  ? "font-bold text-[#0B63E5]"
+                  : "text-[#838E9E]"
+              }`}
+              onClick={() => redirect("/services")}
+            >
+              {isActive("/services") ? "- Services" : "Services"}
+            </h2>
+            <h2
+              className={`cursor-pointer hover:text-[#0B63E5] duration-300 ${
+                isActive("/projects")
+                  ? "font-bold text-[#0B63E5]"
+                  : "text-[#838E9E]"
+              }`}
+              onClick={() => redirect("/projects")}
+            >
+              {isActive("/projects") ? "- Projects" : "Projects"}
+            </h2>
+            <h2
+              className={`cursor-pointer hover:text-[#0B63E5] duration-300 ${
+                isActive("/contact")
+                  ? "font-bold text-[#0B63E5]"
+                  : "text-[#838E9E]"
+              }`}
+              onClick={() => redirect("/contact")}
+            >
+              {isActive("/contact") ? "- Contact Us" : "Contact Us"}
+            </h2>
           </div>
 
           <div className="flex flex-col gap-y-2">
             <h2 className="font-medium text-[#061C3D] mb-3">Services</h2>
-            <h2 className="text-[#838E9E]">UI/UX Design</h2>
-            <h2 className="text-[#838E9E]">Branding</h2>
-            <h2 className="text-[#838E9E]">Ilustration</h2>
-            <h2 className="text-[#838E9E]">Design Concept</h2>
-            <h2 className="text-[#838E9E]">App Design</h2>
+            <h2 className="text-[#838E9E] cursor-pointer hover:text-[#0B63E5] duration-300">
+              UI/UX Design
+            </h2>
+            <h2 className="text-[#838E9E] cursor-pointer hover:text-[#0B63E5] duration-300">
+              Branding
+            </h2>
+            <h2 className="text-[#838E9E] cursor-pointer hover:text-[#0B63E5] duration-300">
+              Ilustration
+            </h2>
+            <h2 className="text-[#838E9E] cursor-pointer hover:text-[#0B63E5] duration-300">
+              Design Concept
+            </h2>
+            <h2 className="text-[#838E9E] cursor-pointer hover:text-[#0B63E5] duration-300">
+              App Design
+            </h2>
           </div>
 
           <div className="flex flex-col gap-y-2">
             <h2 className="font-medium text-[#061C3D] mb-3">Product</h2>
-            <h2 className="text-[#838E9E]">Figma</h2>
-            <h2 className="text-[#838E9E]">Adobe</h2>
-            <h2 className="text-[#838E9E]">Dribble</h2>
-            <h2 className="text-[#838E9E]">Behance</h2>
-            <h2 className="text-[#838E9E]">Themeforest</h2>
+            <h2 className="text-[#838E9E] cursor-pointer hover:text-[#0B63E5] duration-300">
+              Figma
+            </h2>
+            <h2 className="text-[#838E9E] cursor-pointer hover:text-[#0B63E5] duration-300">
+              Adobe
+            </h2>
+            <h2 className="text-[#838E9E] cursor-pointer hover:text-[#0B63E5] duration-300">
+              Dribble
+            </h2>
+            <h2 className="text-[#838E9E] cursor-pointer hover:text-[#0B63E5] duration-300">
+              Behance
+            </h2>
+            <h2 className="text-[#838E9E] cursor-pointer hover:text-[#0B63E5] duration-300">
+              Themeforest
+            </h2>
           </div>
 
           <div className="flex flex-col justify-between gap-y-2">

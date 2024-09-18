@@ -6,6 +6,7 @@ const WorkTogether: React.FC = () => {
   const navigate = useNavigate();
 
   const redirectToContact = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     navigate("/contact");
   };
   return (
