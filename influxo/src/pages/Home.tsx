@@ -7,8 +7,14 @@ import home3 from "../assets/decorations/home-small-3.svg";
 import ProjectsSection from "../components/ProjectsSection";
 import AboutUs from "../components/AboutUs";
 import ServicesHome from "../components/ServicesHome";
+import { useNavigate } from "react-router-dom";
 
 const Home: React.FC = () => {
+  const navigate = useNavigate();
+
+  const redirect = (path: string) => {
+    navigate(path);
+  };
   return (
     <div className="">
       <div className="relative min-h-screen bg-white flex flex-col items-center  overflow-hidden">
@@ -31,7 +37,10 @@ const Home: React.FC = () => {
               Transforming ideas into exceptional web experiences with
               cutting-edge development and creative solutions.
             </p>
-            <button className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300">
+            <button
+              className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300"
+              onClick={() => redirect("/contact")}
+            >
               Contact Us
             </button>
           </div>
