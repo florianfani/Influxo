@@ -1,9 +1,15 @@
 import React from "react";
 import shape from "../assets/decorations/Shape.svg";
 import curly from "../assets/decorations/curly-shape.svg";
+import { useNavigate } from "react-router-dom";
 //import { FaPencilRuler, FaMobileAlt, FaCode, FaShoppingCart } from "react-icons/fa";
 
 const ServicesHome: React.FC = () => {
+  const navigate = useNavigate();
+
+  const redirect = (path: string) => {
+    navigate(path);
+  };
   return (
     <div className="relative">
       <div
@@ -47,12 +53,12 @@ const ServicesHome: React.FC = () => {
                 posuere cubilia curae; Nam nec tortor massa. Praesent cursus
                 porttitor egestas.
               </p>
-              <a
-                href="#"
+              <button
+                onClick={() => redirect("/services/ui-ux-design")}
                 className="text-blue-600 hover:underline flex items-center"
               >
                 Learn More <i className="fas fa-arrow-right ml-2"></i>
-              </a>
+              </button>
             </div>
           </div>
           <div className="bg-white hover:scale-105 duration-300 text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl flex items-start">
@@ -66,12 +72,12 @@ const ServicesHome: React.FC = () => {
                 posuere cubilia curae; Nam nec tortor massa. Praesent cursus
                 porttitor egestas.
               </p>
-              <a
-                href="#"
+              <button
+                onClick={() => redirect("/services/mobile")}
                 className="text-blue-600 hover:underline flex items-center"
               >
                 Learn More <i className="fas fa-arrow-right ml-2"></i>
-              </a>
+              </button>
             </div>
           </div>
           <div className="bg-white hover:scale-105 duration-300 text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl flex items-start">
@@ -83,12 +89,12 @@ const ServicesHome: React.FC = () => {
                 posuere cubilia curae; Nam nec tortor massa. Praesent cursus
                 porttitor egestas.
               </p>
-              <a
-                href="#"
+              <button
+                onClick={() => redirect("/services/web")}
                 className="text-blue-600 hover:underline flex items-center"
               >
                 Learn More <i className="fas fa-arrow-right ml-2"></i>
-              </a>
+              </button>
             </div>
           </div>
           <div className="bg-white hover:scale-105 duration-300 text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl flex items-start">
@@ -102,12 +108,12 @@ const ServicesHome: React.FC = () => {
                 posuere cubilia curae; Nam nec tortor massa. Praesent cursus
                 porttitor egestas.
               </p>
-              <a
-                href="#"
+              <button
+                onClick={() => redirect("/services/e-commerce")}
                 className="text-blue-600 hover:underline flex items-center"
               >
                 Learn More <i className="fas fa-arrow-right ml-2"></i>
-              </a>
+              </button>
             </div>
           </div>
         </div>
