@@ -7,6 +7,7 @@ const ProjectsSection = () => {
   const navigate = useNavigate();
 
   const redirect = (id: number) => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     navigate(`/projects/${id}`);
   };
   return (
