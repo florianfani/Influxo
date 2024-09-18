@@ -6,6 +6,7 @@ import home2 from "../assets/decorations/home-small-2.svg";
 import home3 from "../assets/decorations/home-small-3.svg";
 import ProjectsSection from "../components/ProjectsSection";
 import AboutUs from "../components/AboutUs";
+import ServicesHome from "../components/ServicesHome";
 
 const Home: React.FC = () => {
   return (
@@ -62,6 +63,9 @@ const Home: React.FC = () => {
       </div>
       <div>
         <AboutUs />
+      </div>
+      <div>
+        <ServicesHome />
       </div>
       <div>
         <ProjectsSection />
