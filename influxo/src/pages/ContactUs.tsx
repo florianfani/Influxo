@@ -140,7 +140,7 @@ const ContactForm: React.FC = () => {
             Have a project in mind? Drop us a line.
           </h2>
           <p className="text-center text-gray-600 mb-8 lg:max-w-[700px]">
-            Got a project? Drop me a line if you want to work together on
+            Got a project? Drop us a line if you want to work together on
             something exciting. Or do you need our help? Feel free to contact
             us.
           </p>
