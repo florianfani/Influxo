@@ -48,13 +48,13 @@ const Home: React.FC = () => {
             />
 
             {/* Floating icons around the image */}
-            <div className="absolute top-6 -left-10 w-100 h-100 bg-white  bg-transparent transform -translate-x-4 -translate-y-4">
+            <div className="absolute top-6 -left-10 w-100 h-100 bg-transparent transform -translate-x-4 -translate-y-4">
               <img src={home1} alt="Icon 1" />
             </div>
-            <div className="absolute top-6 right-8 w-100 h-100 bg-white  bg-transparent transform translate-x-4">
+            <div className="absolute top-6 right-8 w-100 h-100 bg-transparent transform translate-x-4">
               <img src={home2} alt="Icon 2" />
             </div>
-            <div className="absolute -bottom-8  w-100 h-100 bg-white  bg-transparent transform -translate-x-8 translate-y-8">
+            <div className="absolute -bottom-8  w-100 h-100 bg-transparent transform -translate-x-8 translate-y-8">
               <img src={home3} alt="Icon 3" />
             </div>
           </div>

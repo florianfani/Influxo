@@ -14,10 +14,6 @@ export const Footer: React.FC = () => {
             We build readymade websites, mobile applications, and elaborate
             online business services
           </p>
-          <div className="flex gap-x-5">
-            <h2 className="text-[#061C3D] text-sm font-medium">Light Mode</h2>
-            <h2 className="text-[#9BA4B1] text-sm">Dark Mode</h2>
-          </div>
         </div>
 
         <div className="flex justify-between w-[70%] mt-4">
