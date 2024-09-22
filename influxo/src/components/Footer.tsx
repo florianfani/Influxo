@@ -15,12 +15,12 @@ export const Footer: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <div className="footer-wrapper px-[16%] bg-[#e8e9eb] flex flex-col justify-between">
+    <div className="footer-wrapper px-[8%] lg:px-[16%] bg-[#e8e9eb] flex flex-col justify-between">
       <div className="justify-between md:flex grid gap-3  py-[125px] border-b border-[#9BA4B1]">
         <div className="md:w-[20%] w-full">
           <div className="mb-5 items-end">
             <img
-              className="w-[60%] cursor-pointer"
+              className="w-[40%] lg:w-[60%] cursor-pointer"
               src={influxo}
               alt="logo image"
               onClick={() => redirect("/")}

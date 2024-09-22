@@ -133,9 +133,9 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center py-10 px-3 md:px-[16%]">
+    <div className="flex flex-col items-center justify-center py-10 px-[8%] lg:px-[16%]">
       <div className="bg-white w-full flex flex-col items-center justify-center max-w-6xl">
-        <div className="flex flex-col items-center justify-center max-w-[60%]">
+        <div className="flex flex-col items-center justify-center lg:max-w-[60%]">
           <h2 className="md:text-[56px] text-[36px] font-bold mb-4 text-center">
             Have a project in mind? Drop us a line.
           </h2>

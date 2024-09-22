@@ -5,7 +5,7 @@ import stack from "../assets/decorations/Stack.svg";
 
 const AboutUs: React.FC = () => {
   return (
-    <div className="px-[5%] lg:px-[16%] flex flex-col lg:flex-row justify-between w-full mb-[124px]">
+    <div className="px-[8%] lg:px-[16%] flex flex-col lg:flex-row justify-between w-full mb-[124px]">
       <div className="left-side lg:w-[50%] lg:pr-[10%]">
         <div>
           <h2 className="text-[#061C3D] font-bold text-4xl lg:text-[56px]">
