@@ -15,9 +15,9 @@ export const Footer: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <div className="footer-wrapper px-[16%] bg-[#e8e9eb]">
-      <div className="justify-between flex py-[125px] border-b border-[#9BA4B1]">
-        <div className="w-[20%] ">
+    <div className="footer-wrapper px-[16%] bg-[#e8e9eb] flex flex-col justi">
+      <div className="justify-between md:flex grid gap-3  py-[125px] border-b border-[#9BA4B1]">
+        <div className="md:w-[20%] w-full">
           <div className="mb-5 items-end">
             <img
               className="w-[60%] cursor-pointer"
@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex justify-between w-[70%] mt-4">
+        <div className="md:flex grid grid-cols-2 gap-3 justify-between  md:w-[70%] w-full mt-4">
           <div className="flex flex-col gap-y-2">
             <h2 className="font-medium text-[#061C3D] mb-3">Quick Links</h2>
             <h2

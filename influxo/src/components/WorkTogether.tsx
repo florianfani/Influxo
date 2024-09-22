@@ -10,17 +10,17 @@ const WorkTogether: React.FC = () => {
     navigate("/contact");
   };
   return (
-    <div className="flex items-center justify-center w-full h-[500px] bg-[#061C3D] text-white">
-      <div className="flex items-center justify-center p-6 w-[80%]">
-        <div className="mr-6 w-1/2 flex justify-center items-center">
+    <div className="flex items-center justify-center w-full md:h-[500px] h-[800px] bg-[#061C3D] text-white">
+      <div className="grid md:flex items-center justify-center p-6 w-[80%]">
+        <div className="mr-6 md:w-1/2 w-full flex justify-center items-center">
           <img
             src={WorkTogetherSVG}
             alt="Illustration"
-            className="w-96 h-auto"
+            className="md:w-96 max-w-full max-h-full md:h-auto"
           />
         </div>
-        <div className="ml-16 w-1/2">
-          <h1 className="text-[56px] font-bold mb-4">
+        <div className="ml-16 md:w-1/2 w-full">
+          <h1 className="md:text-[56px] text-[36px] font-bold mb-4">
             Have a project idea! Let’s work together.
           </h1>
           <p className="text-[18px] mb-6">
