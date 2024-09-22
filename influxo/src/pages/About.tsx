@@ -5,9 +5,9 @@ import WorkTogether from "../components/WorkTogether";
 const About = () => {
   return (
     <div>
-      <div className="flex flex-col items-center py-10 px-3 md:px-[16%] bg-[#F0F5FF]">
+      <div className="flex flex-col items-center py-10 px-[8%] lg:px-[16%] bg-[#F0F5FF]">
         <div className="container flex flex-col justify-end md:flex-row items-center md:max-h-[45vh]">
-          <div className="md:w-1/2 pr-10">
+          <div className="md:w-1/2 lg:pr-10">
             <h2 className="md:text-4xl text-[36px] font-bold md:mb-4">
               About Us
             </h2>
@@ -27,7 +27,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col w-full px-3 md:px-[16%] mt-10 justify-center items-center">
+      <div className="flex flex-col w-full px-[8%] lg:px-[16%] mt-10 justify-center items-center">
         <img
           src={Project1}
           alt="About Us"

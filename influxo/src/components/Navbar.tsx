@@ -24,7 +24,7 @@ export const Navbar: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <div className="navbar-wrapper flex justify-between px-[16%] py-7">
+    <div className="navbar-wrapper flex justify-between px-[8%] lg:px-[16%] py-7">
       <div className="">
         <img
           className="w-[40%] cursor-pointer"
@@ -80,23 +80,26 @@ export const Navbar: React.FC = () => {
         </button>
       </div>
       <div className="md:hidden flex items-center">
-        <button onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            ></path>
-          </svg>
-        </button>
+        {isDrawerOpen === false && (
+          <button onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        )}
       </div>
+
       {isDrawerOpen && (
         <div
           className="fixed inset-0 bg-black opacity-50 z-40"
