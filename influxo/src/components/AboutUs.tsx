@@ -5,10 +5,12 @@ import stack from "../assets/decorations/Stack.svg";
 
 const AboutUs: React.FC = () => {
   return (
-    <div className="px-[16%] flex justify-between w-full mb-[124px]">
-      <div className="left-side w-[50%] pr-[10%]">
+    <div className="px-[5%] lg:px-[16%] flex flex-col lg:flex-row justify-between w-full mb-[124px]">
+      <div className="left-side lg:w-[50%] lg:pr-[10%]">
         <div>
-          <h2 className="text-[#061C3D] font-bold text-[56px]">About Us</h2>
+          <h2 className="text-[#061C3D] font-bold text-4xl lg:text-[56px]">
+            About Us
+          </h2>
           <p className="text-[#42526B] mt-4">
             At Influxo, we specialize in transforming ideas into exceptional web
             experiences. Our team of experts combines advanced development
@@ -51,7 +53,7 @@ const AboutUs: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="right-side w-[50%] flex items-center justify-center">
+      <div className="right-side w-[50%] hidden lg:flex items-center justify-center">
         <img src={man2} alt="Smiling man" className="rounded-lg" />
       </div>
     </div>

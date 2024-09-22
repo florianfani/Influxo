@@ -1,13 +1,10 @@
 import React from "react";
-import man1 from "../assets/decorations/portrait-smiling-1.svg";
-import snake from "../assets/decorations/snake-line.svg";
-import home1 from "../assets/decorations/home-small-1.svg";
-import home2 from "../assets/decorations/home-small-2.svg";
-import home3 from "../assets/decorations/home-small-3.svg";
 import ProjectsSection from "../components/ProjectsSection";
 import AboutUs from "../components/AboutUs";
 import ServicesHome from "../components/ServicesHome";
 import { useNavigate } from "react-router-dom";
+import Lottie from "react-lottie";
+import animationData from "../lotties/animation.json";
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -15,15 +12,19 @@ const Home: React.FC = () => {
   const redirect = (path: string) => {
     navigate(path);
   };
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   return (
     <div className="">
-      <div className="relative min-h-screen bg-white flex flex-col items-center  overflow-hidden">
-        {/* Curly snake-like line (SVG) */}
-        <div className="absolute inset-0">
-          <img src={snake} alt="" />
-        </div>
-
-        <div className="relative z-10 w-full mx-auto pl-[16%] py-16 flex flex-col lg:flex-row items-center justify-between">
+      <div className="min-h-screen bg-white flex flex-col items-center overflow-hidden">
+        <div className="z-10 w-full mx-auto px-[5%] lg:px-[16%] py-12 flex flex-col lg:flex-row items-center justify-between">
           {/* Left Section */}
           <div className="lg:w-1/2">
             <span className="bg-[#FFE9BD] text-[#061C3D] py-2 px-5 rounded-full text-sm font-semibold tracking-widest">
@@ -45,32 +46,28 @@ const Home: React.FC = () => {
             </button>
           </div>
 
-          {/* Right Section - Image */}
-          <div className="lg:w-1/2 mt-12 lg:mt-0 relative">
-            {/* Purple Gradient Behind Man */}
-            <div className="absolute inset-0 w-[115%] h-[75.5%] bg-gradient-to-r from-purple-300 to-purple-100 filter  opacity-95 z-0 transform -translate-x-1/8 translate-y-[20%]"></div>
-
-            {/* Image of the smiling man */}
-            <img
-              src={man1}
-              alt="Developer with laptop"
-              className="rounded-lg relative z-10"
-            />
-
-            {/* Floating icons around the image */}
-            <div className="absolute top-6 -left-10 w-100 h-100 bg-transparent transform -translate-x-4 -translate-y-4">
-              <img src={home1} alt="Icon 1" />
+          {/* Right Section - Animation */}
+          <div className="lg:w-1/2 md:mt-12 lg:mt-0 md:mr-12">
+            <div className="hidden md:block">
+              <Lottie
+                isClickToPauseDisabled={true}
+                options={defaultOptions}
+                height={600}
+                width={1000}
+              />
             </div>
-            <div className="absolute top-6 right-8 w-100 h-100 bg-transparent transform translate-x-4">
-              <img src={home2} alt="Icon 2" />
-            </div>
-            <div className="absolute -bottom-8  w-100 h-100 bg-transparent transform -translate-x-8 translate-y-8">
-              <img src={home3} alt="Icon 3" />
+            <div className=" md:hidden">
+              <Lottie
+                isClickToPauseDisabled={true}
+                options={defaultOptions}
+                height={300}
+                width={400}
+              />
             </div>
           </div>
         </div>
       </div>
-      <div>
+      <div className="-mt-24">
         <AboutUs />
       </div>
       <div>

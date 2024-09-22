@@ -12,7 +12,7 @@ const ProjectsSection = () => {
   };
   return (
     <div className="mt-32">
-      <div className="projects-wrapper px-[16%] py-10">
+      <div className="projects-wrapper px-[5%] lg:px-[16%] py-10">
         <h2 className="text-4xl font-bold mb-8">Our featured projects</h2>
         <div className="flex flex-col justify-center items-center gap-16 mt-16">
           <div className="project-item flex flex-col lg:flex-row gap-4">
