@@ -5,11 +5,13 @@ import WorkTogether from "../components/WorkTogether";
 const About = () => {
   return (
     <div>
-      <div className="flex flex-col items-center py-10 px-[16%] bg-[#F0F5FF]">
-        <div className="container flex flex-col justify-end md:flex-row items-center max-h-[45vh]">
+      <div className="flex flex-col items-center py-10 px-3 md:px-[16%] bg-[#F0F5FF]">
+        <div className="container flex flex-col justify-end md:flex-row items-center md:max-h-[45vh]">
           <div className="md:w-1/2 pr-10">
-            <h2 className="text-4xl font-bold mb-4">About Us</h2>
-            <p className="text-md text-[#42526B]">
+            <h2 className="md:text-4xl text-[36px] font-bold md:mb-4">
+              About Us
+            </h2>
+            <p className="md:text-md text-[16px] text-[#42526B]">
               We’re a web development company that builds custom, responsive
               websites focused on user experience and SEO. Our team delivers
               high-quality solutions tailored to your business, with ongoing
@@ -17,11 +19,15 @@ const About = () => {
             </p>
           </div>
           <div className="md:w-1/2 flex justify-end items-center">
-            <img src={AboutImage} alt="About Us" className="w-76 h-auto mb-6" />
+            <img
+              src={AboutImage}
+              alt="About Us"
+              className="w-76 h-auto md:mb-6"
+            />
           </div>
         </div>
       </div>
-      <div className="flex flex-col w-full px-[16%] mt-10 justify-center items-center">
+      <div className="flex flex-col w-full px-3 md:px-[16%] mt-10 justify-center items-center">
         <img
           src={Project1}
           alt="About Us"
@@ -47,8 +53,12 @@ const About = () => {
             Whether you’re a small startup or an established brand, Influxo is
             here to help you succeed in the ever-evolving digital landscape.
           </p>
-          <div className="flex justify-center gap-10 my-10 items-center">
-            <img src={Project1} alt="Photo" className="w-1/2 h-full" />
+          <div className="md:flex justify-center gap-10 my-10 items-center">
+            <img
+              src={Project1}
+              alt="Photo"
+              className="w-full md:w-1/2 h-full object-cover mb-10 md:mb-0"
+            />
             <p>
               Our mission is to provide innovative web development services that
               drive business growth and digital transformation. We focus on

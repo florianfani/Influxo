@@ -133,10 +133,10 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center py-10 px-[16%]">
+    <div className="flex flex-col items-center justify-center py-10 px-3 md:px-[16%]">
       <div className="bg-white w-full flex flex-col items-center justify-center max-w-6xl">
         <div className="flex flex-col items-center justify-center max-w-[60%]">
-          <h2 className="text-[56px] font-bold mb-4 text-center">
+          <h2 className="md:text-[56px] text-[36px] font-bold mb-4 text-center">
             Have a project in mind? Drop us a line.
           </h2>
           <p className="text-center text-gray-600 mb-8 lg:max-w-[700px]">
@@ -145,9 +145,9 @@ const ContactForm: React.FC = () => {
             us.
           </p>
         </div>
-        <div className="flex flex-col justify-between lg:flex-row space-y-8 lg:space-y-0 w-full">
+        <div className="flex flex-col-reverse lg:flex-row gap-10 md:gap-0 w-full">
           {/* Left Column */}
-          <div className="bg-gradient-to-br from-[#073B89] to-[#1b5dba] text-white p-8 flex flex-col justify-between rounded-l-3xl w-full lg:w-1/2 relative">
+          <div className="bg-gradient-to-br from-[#073B89] to-[#1b5dba] text-white p-8 flex flex-col justify-between md:rounded-l-3xl rounded-3xl md:rounded-none w-full lg:w-1/2 relative">
             {/* Image */}
             <div className="absolute -top-10 -right-10 hidden sm:block">
               <img
@@ -238,7 +238,7 @@ const ContactForm: React.FC = () => {
           </div>
 
           {/* Right Column */}
-          <div className="bg-gray-100 p-8 rounded-r-3xl w-full lg:w-1/2">
+          <div className="bg-gray-100 p-8 md:rounded-r-3xl md:rounded-l-none rounded-3xl w-full lg:w-1/2">
             <form onSubmit={handleSubmit}>
               <div className="mb-4 flex flex-col md:flex-row justify-between space-y-4 md:space-y-0">
                 <div className="w-full md:mr-4">

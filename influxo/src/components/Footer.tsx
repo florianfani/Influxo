@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <div className="footer-wrapper px-[16%] bg-[#e8e9eb] flex flex-col justi">
+    <div className="footer-wrapper px-[16%] bg-[#e8e9eb] flex flex-col justify-between">
       <div className="justify-between md:flex grid gap-3  py-[125px] border-b border-[#9BA4B1]">
         <div className="md:w-[20%] w-full">
           <div className="mb-5 items-end">
@@ -158,7 +158,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="py-8 flex justify-center">
+      <div className="mb-20 md:mb-0 md:py-8 flex justify-center">
         <span className="text-[#061C3D]">
           Copyright © {new Date().getFullYear()} Influxo. All Rights Reserved.
         </span>

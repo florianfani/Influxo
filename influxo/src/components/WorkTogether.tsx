@@ -19,7 +19,7 @@ const WorkTogether: React.FC = () => {
             className="md:w-96 max-w-full max-h-full md:h-auto"
           />
         </div>
-        <div className="ml-16 md:w-1/2 w-full">
+        <div className="ml-6 md:ml-16 md:w-1/2 w-full">
           <h1 className="md:text-[56px] text-[36px] font-bold mb-4">
             Have a project idea! Let’s work together.
           </h1>
