@@ -3,8 +3,8 @@ import ProjectsSection from "../components/ProjectsSection";
 import AboutUs from "../components/AboutUs";
 import ServicesHome from "../components/ServicesHome";
 import { useNavigate } from "react-router-dom";
-import Lottie from "react-lottie";
-import animationData from "../lotties/animation.json";
+//import Lottie from "react-lottie";
+//import animationData from "../lotties/animation.json";
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -13,14 +13,14 @@ const Home: React.FC = () => {
     navigate(path);
   };
 
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
+  // const defaultOptions = {
+  //   loop: true,
+  //   autoplay: true,
+  //   animationData: animationData,
+  //   rendererSettings: {
+  //     preserveAspectRatio: "xMidYMid slice",
+  //   },
+  // };
   return (
     <div className="">
       <div className="min-h-screen bg-white flex flex-col items-center overflow-hidden">
@@ -56,14 +56,14 @@ const Home: React.FC = () => {
                 width={1000}
               />
             </div> */}
-            <div className=" md:hidden">
+            {/* <div className=" md:hidden">
               <Lottie
                 isClickToPauseDisabled={true}
                 options={defaultOptions}
                 height={300}
                 width={400}
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
