@@ -15,12 +15,12 @@
   ],
   "routes": [
     {
-      "src": "/api/(.)",
+      "src": "/api/(.*)",
       "dest": "/server/index.js"
     },
     {
-      "src": "/(.)",
-      "dest": "/dist/index.html"
+      "src": "/(.*)",
+      "dest": "/src/main.tsx"
     }
   ]
 }
