@@ -3,33 +3,33 @@ import ProjectsSection from "../components/ProjectsSection";
 import AboutUs from "../components/AboutUs";
 import ServicesHome from "../components/ServicesHome";
 import { useNavigate } from "react-router-dom";
-import Lottie from "react-lottie";
-import animationData from "../lotties/animation.json";
+// import Lottie from "react-lottie";
+// import animationData from "../lotties/animation.json";
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
-  const [playAnimation, setPlayAnimation] = useState(true);
+  //const [playAnimation, setPlayAnimation] = useState(true);
 
   const redirect = (path: string) => {
     navigate(path);
   };
 
-  const defaultOptions = {
-    loop: true, // Keep looping
-    autoplay: true, // Start playing automatically
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
+  // const defaultOptions = {
+  //   loop: true, // Keep looping
+  //   autoplay: true, // Start playing automatically
+  //   animationData: animationData,
+  //   rendererSettings: {
+  //     preserveAspectRatio: "xMidYMid slice",
+  //   },
+  // };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setPlayAnimation((prevPlayAnimation) => !prevPlayAnimation); // Toggle play and pause every 5 seconds
-    }, 8000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setPlayAnimation((prevPlayAnimation) => !prevPlayAnimation); // Toggle play and pause every 5 seconds
+  //   }, 8000);
 
-    return () => clearInterval(interval); // Cleanup interval on component unmount
-  }, []);
+  //   return () => clearInterval(interval); // Cleanup interval on component unmount
+  // }, []);
 
   return (
     <div className="">
@@ -50,7 +50,7 @@ const Home: React.FC = () => {
 
           {/* Right Section - Animation */}
           <div className="lg:w-1/2 md:mt-12 lg:mt-0 md:mr-12">
-            <div className="w-[400px] h-[300px] lg:w-[1000px] lg:h-[600px]">
+            {/* <div className="w-[400px] h-[300px] lg:w-[1000px] lg:h-[600px]">
               <Lottie
                 isClickToPauseDisabled={true}
                 options={{
@@ -59,7 +59,7 @@ const Home: React.FC = () => {
                 }}
                 isPaused={!playAnimation}
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
