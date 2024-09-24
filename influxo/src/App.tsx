@@ -15,24 +15,24 @@ function App() {
   return (
     <Router>
       <div className="w-full">
-        <div className="">
+        <div className="md:fixed w-full md:z-50">
           <Navbar />
         </div>
-
-        <Routes>
-          {/* Define routes here */}
-          <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<ContactForm />} />{" "}
-          {/* Contact Page */}
-          {/* <Route path="/" element={<HomePage />} /> Home Page */}
-          <Route path="/contact" element={<ContactForm />} />
-          <Route path="/projects" element={<Projects />} /> {/* Contact Page */}
-          <Route path="/projects/:id" element={<SingleProductPage />} />
-          <Route path="/services/:slug" element={<SingleService />} />
-          {/* Contact Page */}
-          <Route path="/about" element={<About />} />
-          {/* Add other routes as needed */}
-        </Routes>
+        <div className="md:pt-24">
+          <Routes>
+            {/* Define routes here */}
+            <Route path="/" element={<Home />} />
+            <Route path="/contact" element={<ContactForm />} /> {/* Contact Page */}
+            {/* <Route path="/" element={<HomePage />} /> Home Page */}
+            <Route path="/contact" element={<ContactForm />} />
+            <Route path="/projects" element={<Projects />} /> {/* Contact Page */}
+            <Route path="/projects/:id" element={<SingleProductPage />} />
+            <Route path="/services/:slug" element={<SingleService />} />
+            {/* Contact Page */}
+            <Route path="/about" element={<About />} />
+            {/* Add other routes as needed */}
+          </Routes>
+        </div>
 
         <div>
           <Footer />
