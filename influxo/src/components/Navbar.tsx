@@ -7,6 +7,7 @@ export const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isAtTop, setIsAtTop] = useState(true);
 
   useEffect(() => {
     if (isDrawerOpen) {
@@ -16,6 +17,17 @@ export const Navbar: React.FC = () => {
     }
   }, [isDrawerOpen]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsAtTop(window.scrollY === 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const redirect = (path: string) => {
     navigate(path);
     setIsDrawerOpen(false); // Close drawer on navigation
@@ -24,7 +36,7 @@ export const Navbar: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <div className="navbar-wrapper flex justify-between px-[8%] lg:px-[16%] py-7">
+    <div className={`navbar-wrapper w-full ${isAtTop ? "bg-white" : "md:bg-[rgba(232,233,235)] md:shadow-lg"} flex justify-between px-[8%] lg:px-[16%] py-7 transition-all duration-1000`}>
       <div className="">
         <img className="w-[40%] cursor-pointer" src={influxo} alt="logo image" onClick={() => redirect("/")} />
       </div>
