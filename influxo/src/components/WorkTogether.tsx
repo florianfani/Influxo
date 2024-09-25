@@ -16,7 +16,7 @@ const WorkTogether: React.FC = () => {
           <img src={WorkTogetherSVG} alt="Illustration" className="md:w-96 max-w-full max-h-full md:h-auto" />
         </div>
         <div className="ml-6 md:ml-16 md:w-1/2 w-full">
-          <h1 className="md:text-[56px] text-[36px] font-bold mb-4 leading-tight">Have a project idea! Let’s work together.</h1>
+          <h1 className="lg:text-[56px] text-[36px] font-bold mb-4 leading-tight">Have a project idea! Let’s work together.</h1>
           <p className="text-[18px]  mb-6">
             Leading digital agency with solid design and development expertise.
             <span className="hidden lg:inline">
