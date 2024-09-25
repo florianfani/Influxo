@@ -5,11 +5,21 @@ import stack from "../assets/decorations/Stack.svg";
 
 const AboutUs: React.FC = () => {
   return (
-    <div className="px-[8%] lg:px-[16%] flex flex-col lg:flex-row justify-between w-full mb-[124px]">
-      <div className="left-side lg:w-[50%] lg:pr-[10%]">
+    <div className="px-[8%] lg:px-0 lg:pl-[16%] lg:pr-[8%] flex flex-col lg:flex-row justify-between mb-[124px]">
+      <div className="left-side lg:w-[45%] ">
         <div>
           <h2 className="text-[#061C3D] font-bold text-4xl lg:text-[56px]">About Us</h2>
-          <p className="text-[#42526B] mt-4">At Influxo, we specialize in transforming ideas into exceptional web experiences. Our team of experts combines advanced development techniques with creative solutions to deliver websites that not only look great but also perform flawlessly. We’re passionate about crafting digital experiences that elevate your brand and drive success.</p>
+          <p className="text-[#42526B] mt-4">
+            At Influxo, we specialize in transforming ideas into exceptional web experiences. Our team of experts combines advanced development techniques with creative solutions to deliver websites that not only{" "}
+            <span className="hidden lg:inline">
+              <br />
+            </span>{" "}
+            look great but also perform flawlessly. We’re passionate about crafting{" "}
+            <span className="hidden lg:inline">
+              <br />
+            </span>{" "}
+            digital experiences that elevate your brand and drive success.
+          </p>
         </div>
         <div className="p-6 bg-[#FFF9EE] mt-8 rounded-2xl">
           <div className="flex items-start mb-4 border-b border-[#9BA4B1]">
@@ -33,7 +43,7 @@ const AboutUs: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="right-side  lg:flex items-center justify-end">
+      <div className="right-side hidden lg:flex items-center ">
         <img src={AboutImage} alt="About Us" className="lg:w-[600px]" />
       </div>
     </div>
