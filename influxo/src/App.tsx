@@ -8,6 +8,7 @@ import Projects from "./pages/Projects";
 import SingleProductPage from "./pages/SingleProductPage";
 // You can import other pages here as needed
 import Home from "./pages/Home";
+import Services from "./pages/Services";
 import SingleService from "./pages/SingleService";
 // import AboutPage from './pages/AboutPage';
 
@@ -27,6 +28,7 @@ function App() {
             <Route path="/contact" element={<ContactForm />} />
             <Route path="/projects" element={<Projects />} /> {/* Contact Page */}
             <Route path="/projects/:id" element={<SingleProductPage />} />
+            <Route path="/services" element={<Services />} /> {/* Contact Page */}
             <Route path="/services/:slug" element={<SingleService />} />
             {/* Contact Page */}
             <Route path="/about" element={<About />} />
