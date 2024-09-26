@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import NotFoundIMG from '../assets/decorations/404.png'
 
-export const NotFound = () => {
+export const NotFound: React.FC = () => {
  const navigate = useNavigate();
 
  const redirect = (path: string) => {
