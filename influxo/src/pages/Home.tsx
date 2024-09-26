@@ -70,7 +70,7 @@ const Home: React.FC = () => {
         <ServicesHome />
       </div>
       <div>
-        <ProjectsSection />
+        <ProjectsSection amount={3} />
       </div>
     </div>
   );
