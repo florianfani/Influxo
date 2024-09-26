@@ -8,6 +8,7 @@ import Projects from "./pages/Projects";
 import SingleProductPage from "./pages/SingleProductPage";
 import Home from "./pages/Home";
 import SingleService from "./pages/SingleService";
+import { NotFound } from "./pages/NotFound";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/projects/:id" element={<SingleProductPage />} />
             <Route path="/services/:slug" element={<SingleService />} />
             <Route path="/about" element={<About />} />
+            <Route path="/notfound" element={<NotFound />} />
           </Routes>
         </div>
         <div>
