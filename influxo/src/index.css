@@ -2,3 +2,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.slick-slide > div {
+  margin: 0 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.slick-list > div {
+  padding-bottom: 52px;
+  background-color: transparent;
+}
+
+.slick-dots li button:before {
+  content: " ";
+}
+.slick-dots li button {
+  width: 12px;
+  height: 8px;
+  background: #cee0fa;
+  padding: 0.1rem;
+  margin-top: 1rem;
+  transition: all 400ms ease-in-out;
+  border-radius: 50px;
+}
+.slick-dots li.slick-active button {
+  background: #0b63e5;
+  width: 15px;
+}
+.slick-dots li {
+  margin: 0;
+}
+.slick-dots {
+  background-color: transparent;
+}
