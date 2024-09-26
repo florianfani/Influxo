@@ -34,7 +34,7 @@ const Home: React.FC = () => {
   return (
     <div className="">
       <div className="min-h-screen bg-white flex flex-col items-center overflow-hidden">
-        <div className="z-10 w-full mx-auto px-[8%] lg:px-[16%] py-12 flex flex-col lg:flex-row items-center justify-between">
+        <div className="z-10 w-full mx-auto px-[8%] xl:px-[16%] py-12 flex flex-col lg:flex-row items-center justify-between">
           {/* Left Section */}
           <div className="lg:w-1/2">
             <span className="bg-[#FFE9BD] text-[#061C3D] py-2 px-5 rounded-full text-sm font-semibold tracking-widest">WELCOME TO INFLUXO</span>

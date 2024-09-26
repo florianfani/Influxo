@@ -31,7 +31,6 @@ const ContactForm: React.FC = () => {
       ...errors,
       [e.target.name]: false,
     });
-
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -121,7 +120,7 @@ const ContactForm: React.FC = () => {
     <div className="flex flex-col items-center justify-center py-10 px-[8%] lg:px-[16%]">
       <div className="bg-white w-full flex flex-col items-center justify-center max-w-6xl">
         <div className="flex flex-col items-center justify-center lg:max-w-[60%]">
-          <h2 className="md:text-[56px] text-[36px] font-bold mb-4 text-center">Have a project in mind? Drop us a line.</h2>
+          <h2 className="md:text-[56px] text-[36px] font-bold mb-4 text-center leading-tight">Have a project in mind? Drop us a line.</h2>
           <p className="text-center text-gray-600 mb-8 lg:max-w-[700px]">Got a project? Drop us a line if you want to work together on something exciting. Or do you need our help? Feel free to contact us.</p>
         </div>
         <div className="flex flex-col-reverse lg:flex-row gap-10 md:gap-0 w-full">

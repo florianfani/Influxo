@@ -54,6 +54,33 @@ const ServicesHome: React.FC = () => {
     },
     responsive: [
       {
+        breakpoint: 1536,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 1025,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
@@ -65,7 +92,7 @@ const ServicesHome: React.FC = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 2,
           initialSlide: 2,
           dots: true,
@@ -83,7 +110,7 @@ const ServicesHome: React.FC = () => {
   };
 
   return (
-    <div className="px-[16%]">
+    <div className="px-[8%] xl:px-[16%]">
       <div className="flex flex-col lg:flex-row justify-between mb-8">
         <h2 className="text-3xl font-bold mb-5 lg:mb-0">Explore our influxo team services.</h2>
         <button className="bg-[#F0F5FF] text-[#0B63E5] font-bold py-2 px-4 rounded-lg w-[200px] hover:bg-blue-600 hover:text-white text-center text-md duration-300" onClick={() => redirect(`services`)}>
@@ -109,7 +136,7 @@ const ServicesHome: React.FC = () => {
           </div>
         ))}
       </Slider>
-      <div className="text-center hidden absolute lg:flex justify-center gap-x-5 -mt-5 " style={{ width: "67.5vw" }}>
+      <div className="text-center hidden absolute lg:flex justify-center gap-x-5 -mt-5 w-[85vw] xl:w-[67.5vw]">
         <button className="button p-3 rounded-lg hover:scale-105 duration-300 bg-[#F0F5FF]" onClick={previous}>
           <img src={arrow} alt="" />
         </button>

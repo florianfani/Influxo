@@ -12,8 +12,8 @@ const Projects = () => {
 
   return (
     <div>
-      <div className="projects-wrapper px-[8%] lg:px-[16%] py-10">
-        <h2 className="text-4xl font-bold mb-8">Our featured projects</h2>
+      <div className="projects-wrapper px-[8%] xl:px-[16%] py-10">
+        <h2 className="text-4xl font-bold mb-8 ">Our featured projects</h2>
         <div className="flex flex-col justify-center items-center gap-16 mt-16">
           {projects.map((project, index) => (
             <div key={project.id} className={`project-item flex flex-col ${index % 2 === 0 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-4`}>

@@ -9,7 +9,7 @@ const Services: React.FC = () => {
     navigate(`${path}`);
   };
   return (
-    <div className="px-[16%] bg-[#F5F6F7] py-16">
+    <div className="px-[8%] xl:px-[16%] bg-[#F5F6F7] py-16">
       <div>
         <div className="">
           <h2 className="text-[56px] font-bold  mb-4 leading-tight">Our Services</h2>
