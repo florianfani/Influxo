@@ -20,8 +20,6 @@ const ContactForm: React.FC = () => {
     phoneNumber: "",
   });
 
-  const [errorMessage, setErrorMessage] = useState("");
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
@@ -34,8 +32,6 @@ const ContactForm: React.FC = () => {
       [e.target.name]: false,
     });
 
-    // Reset error message
-    setErrorMessage("");
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -77,7 +73,6 @@ const ContactForm: React.FC = () => {
 
     if (errMessage) {
       setErrors(newErrors);
-      setErrorMessage(errMessage);
       return;
     }
 
@@ -214,21 +209,25 @@ const ContactForm: React.FC = () => {
                 <div className="w-full md:mr-4">
                   <label className="block text-gray-700">Name</label>
                   <input type="text" name="name" value={formData.name} onChange={handleChange} className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500 ${errors.name ? "border-red-500" : ""}`} placeholder="Full name" />
+                  {errors.name && <p className="text-red-500 text-xs">{errors.name}</p>}
                 </div>
                 <div className="w-full">
                   <label className="block text-gray-700">Email</label>
                   <input type="text" name="email" value={formData.email} onChange={handleChange} className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500 ${errors.email ? "border-red-500" : ""}`} placeholder="Email address" />
+                  {errors.email && <p className="text-red-500 text-xs">{errors.email}</p>}
                 </div>
               </div>
 
               <div className="mb-4">
                 <label className="block text-gray-700">Phone Number</label>
-                <input type="text" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500 ${errors.subject ? "border-red-500" : ""}`} placeholder="Phone Number" />
+                <input type="text" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500 ${errors.phoneNumber ? "border-red-500" : ""}`} placeholder="Phone Number" />
+                {errors.phoneNumber && <p className="text-red-500 text-xs">{errors.phoneNumber}</p>}
               </div>
 
               <div className="mb-4">
                 <label className="block text-gray-700">Subject</label>
                 <input type="text" name="subject" value={formData.subject} onChange={handleChange} className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500 ${errors.subject ? "border-red-500" : ""}`} placeholder="Subject" />
+                {errors.subject && <p className="text-red-500 text-xs">{errors.subject}</p>}
               </div>
 
               <div className="mb-4">
@@ -239,13 +238,13 @@ const ContactForm: React.FC = () => {
               <div className="mb-4">
                 <label className="block text-gray-700">Message</label>
                 <textarea name="message" value={formData.message} onChange={handleChange} className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500 resize-none overflow-auto h-28 ${errors.message ? "border-red-500" : ""}`} placeholder="Tell us about your project..."></textarea>
+                {errors.message && <p className="text-red-500 text-xs">{errors.message}</p>}
               </div>
               <div className="flex py-6">
                 <button type="submit" className="bg-gradient-to-br from-[#1b5dba] to-[#073B89] text-white py-3 px-6 rounded-lg hover:from-[#4a8ef1] hover:to-[#3a7ed9] hover:scale-105 duration-300 flex items-center justify-center">
                   Send Message <i className="material-icons ml-3">send</i>
                 </button>
               </div>
-              <p className="text-red-500 text-xs">{errorMessage}</p>
             </form>
           </div>
         </div>
