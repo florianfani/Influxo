@@ -1,6 +1,7 @@
 import AboutImage from "../assets/decorations/SVG/chatbot1.svg"; // Adjust the path as necessary
 import Project1 from "../assets/decorations/SVG/Projects1.svg";
 import WorkTogether from "../components/WorkTogether";
+import TeamMembers from "../components/TeamMembers";
 
 const About = () => {
   return (
@@ -72,6 +73,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      <TeamMembers />
       <WorkTogether />
     </div>
   );
