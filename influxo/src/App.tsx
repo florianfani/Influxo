@@ -6,10 +6,8 @@ import About from "./pages/About";
 import "./App.css";
 import Projects from "./pages/Projects";
 import SingleProductPage from "./pages/SingleProductPage";
-// You can import other pages here as needed
 import Home from "./pages/Home";
 import SingleService from "./pages/SingleService";
-// import AboutPage from './pages/AboutPage';
 
 function App() {
   return (
@@ -20,20 +18,14 @@ function App() {
         </div>
         <div className="md:pt-24">
           <Routes>
-            {/* Define routes here */}
             <Route path="/" element={<Home />} />
-            <Route path="/contact" element={<ContactForm />} /> {/* Contact Page */}
-            {/* <Route path="/" element={<HomePage />} /> Home Page */}
             <Route path="/contact" element={<ContactForm />} />
-            <Route path="/projects" element={<Projects />} /> {/* Contact Page */}
+            <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:id" element={<SingleProductPage />} />
             <Route path="/services/:slug" element={<SingleService />} />
-            {/* Contact Page */}
             <Route path="/about" element={<About />} />
-            {/* Add other routes as needed */}
           </Routes>
         </div>
-
         <div>
           <Footer />
         </div>
