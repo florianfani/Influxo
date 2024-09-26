@@ -29,6 +29,7 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const redirect = (path: string) => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     navigate(path);
     setIsDrawerOpen(false); // Close drawer on navigation
   };
