@@ -1,26 +1,12 @@
 import { useRef } from 'react';
 import teamMembers from "../assets/teamMembers";
-import Slider from "react-slick";
+import arrow from "../assets/decorations/ArrowLeft.svg";
+import Slider from "react-slick"; // Ensure you have this import
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import arrow from "../assets/decorations/ArrowLeft.svg";
 
-/**
- * @typedef {Object} TeamMember
- * @property {string} name
- * @property {string} role
- * @property {string} image
- * @property {Object} social
- * @property {string} social.facebook
- * @property {string} social.instagram
- * @property {string} social.twitter
- * @property {string} social.linkedin
- */
 
-/**
- * @type {React.FC}
- */
-const TeamMembers = () => {
+const TeamMembers: React.FC = () => {
     const sliderRef = useRef<Slider | null>(null); // Define the type of sliderRef
 
     const handleNext = () => {
