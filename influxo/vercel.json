@@ -20,7 +20,7 @@
     },
     {
       "source": "/(.*)",
-      "destination": "/src/main.tsx"
+      "destination": "/index.html"
     }
   ]
 }
