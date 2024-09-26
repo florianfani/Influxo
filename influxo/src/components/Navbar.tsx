@@ -37,11 +37,11 @@ export const Navbar: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <div className={`navbar-wrapper w-full ${isAtTop ? "bg-white" : "md:bg-[rgba(232,233,235)] md:shadow-lg"} flex justify-between px-[8%] lg:px-[16%] py-7 transition-all duration-1000`}>
+    <div className={`navbar-wrapper w-full ${isAtTop ? "bg-white" : "md:bg-[rgba(232,233,235)] md:shadow-lg"} flex justify-between px-[8%] xl:px-[16%] py-7 transition-all duration-1000`}>
       <div className="">
         <img className="w-[40%] cursor-pointer" src={influxo} alt="logo image" onClick={() => redirect("/")} />
       </div>
-      <div className="gap-x-10 items-center hidden md:flex">
+      <div className="gap-x-10 items-center hidden xl:flex">
         <h2 className={`cursor-pointer hover:text-[#0B63E5] hover:duration-300 duration-300 ${isActive("/") ? "font-bold text-[#0B63E5]" : "text-[#42526B]"}`} onClick={() => redirect("/")}>
           Home
         </h2>
@@ -58,7 +58,7 @@ export const Navbar: React.FC = () => {
           Contact
         </button>
       </div>
-      <div className="md:hidden flex items-center">
+      <div className="xl:hidden flex items-center">
         {isDrawerOpen === false && (
           <button onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

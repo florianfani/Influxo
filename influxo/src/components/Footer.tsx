@@ -15,16 +15,16 @@ export const Footer: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <div className="footer-wrapper px-[8%] lg:px-[16%] bg-[#e8e9eb] flex flex-col justify-between">
-      <div className="justify-between md:flex grid gap-3  py-[125px] border-b border-[#9BA4B1]">
+    <div className="footer-wrapper px-[8%] xl:px-[16%] bg-[#e8e9eb] flex flex-col justify-between">
+      <div className="justify-between xl:flex grid gap-3 py-[125px] border-b border-[#9BA4B1]">
         <div className="md:w-[20%] w-full">
           <div className="mb-5 items-end">
-            <img className="w-[40%] lg:w-[60%] cursor-pointer" src={influxo} alt="logo image" onClick={() => redirect("/")} />
+            <img className="w-[40%] md:w-[60%] cursor-pointer" src={influxo} alt="logo image" onClick={() => redirect("/")} />
           </div>
           <p className="text-[#6A778B] mb-8">We build readymade websites, mobile applications, and elaborate online business services</p>
         </div>
 
-        <div className="md:flex grid grid-cols-2 gap-3 justify-between  md:w-[70%] w-full mt-4">
+        <div className="xl:flex grid grid-cols-2 gap-3 justify-between  md:w-[70%] w-full mt-4">
           <div className="flex flex-col gap-y-2">
             <h2 className="font-medium text-[#061C3D] mb-3">Quick Links</h2>
             <h2 className={`cursor-pointer hover:text-[#0B63E5] duration-300 ${isActive("/") ? "font-bold text-[#0B63E5]" : "text-[#838E9E]"}`} onClick={() => redirect("/")}>
