@@ -1,128 +1,122 @@
-import React from "react";
-import shape from "../assets/decorations/Shape.svg";
-import curly from "../assets/decorations/curly-shape.svg";
+import React, { useRef, useState } from "react";
+import services from "../assets/services.ts";
 import { useNavigate } from "react-router-dom";
-//import { FaPencilRuler, FaMobileAlt, FaCode, FaShoppingCart } from "react-icons/fa";
+import arrow from "../assets/decorations/ArrowLeft.svg";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const ServicesHome: React.FC = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
 
   const redirect = (path: string) => {
     navigate(path);
   };
+
+  let sliderRef = useRef<Slider | null>(null);
+  const next = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickNext();
+    }
+  };
+  const previous = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickPrev();
+    }
+  };
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    pauseOnHover: true,
+    beforeChange: (_current: number, next: number) => setCurrentSlide(next), // Update current slide index
+    appendDots: (dots: React.ReactNode) => {
+      const totalDots = React.Children.count(dots);
+      const currentDotIndex = currentSlide % totalDots; // Calculate the current dot index based on the total number of dots
+
+      // Calculate the indices for the 3 dots to show
+      const start = Math.floor(currentDotIndex / 5) * 5; // Start from the current group of 5
+      const end = Math.min(start + 5, totalDots); // Ensure we don't exceed total dots
+
+      return (
+        <div>
+          <ul style={{ display: "flex", justifyContent: "center" }}>
+            {React.Children.toArray(dots).slice(start, end)} {/* Show 5 dots based on the current slide */}
+          </ul>
+        </div>
+      );
+    },
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
+        },
+      },
+    ],
+  };
+
   return (
-    <div className="relative">
-      <div
-        className="relative bg-[#094FB7] h-[80vh] text-white py-16"
-        style={{ clipPath: "polygon(0 0, 100% 0, 100% 550px, 0 650px)" }}
-      >
-        <div className="absolute inset-0  mr-[80%] -top-36 justify-center items-center overflow-hidden">
-          <img
-            src={curly}
-            alt="Background Shape"
-            className="w-[700px] h-[700px]"
-          />
-        </div>
-        <div className="absolute inset-0 flex ml-[70%] justify-center items-center overflow-hidden">
-          <img
-            src={shape}
-            alt="Background Shape"
-            className="w-[700px] h-[700px]"
-          />
-        </div>
-        <div className="relative mx-auto px-[16%]">
-          <h2 className="text-[56px] font-bold text-center mb-4">
-            Our Services
-          </h2>
-          <p className="text-center text-lg mb-12 max-w-2xl mx-auto">
-            Influxo provides a full suite of web development services, including
-            custom design, development, and e-commerce solutions. We combine the
-            latest technologies with industry best practices to create visually
-            stunning and highly functional websites that drive results.
-          </p>
-        </div>
+    <div className="px-[16%]">
+      <div className="flex flex-col lg:flex-row justify-between mb-8">
+        <h2 className="text-3xl font-bold mb-5 lg:mb-0">Explore our influxo team services.</h2>
+        <button className="bg-[#F0F5FF] text-[#0B63E5] font-bold py-2 px-4 rounded-lg w-[200px] hover:bg-blue-600 hover:text-white text-center text-md duration-300" onClick={() => redirect(`services`)}>
+          View All Services
+          <i className="fas fa-arrow-right text-sm ml-2"></i>
+        </button>
       </div>
-      <div className="relative mx-auto px-[16%] -mt-[430px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white hover:scale-105 duration-300 text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl flex items-start">
-            <div className="mr-4"></div>
-            <div>
-              <h3 className="text-xl font-semibold mb-2">UI/UX Design</h3>
-              <p className="text-gray-600 mb-4">
-                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-                posuere cubilia curae; Nam nec tortor massa. Praesent cursus
-                porttitor egestas.
-              </p>
-              <button
-                onClick={() => redirect("/services/ui-ux-design")}
-                className="text-blue-600 hover:underline flex items-center"
-              >
-                Learn More <i className="fas fa-arrow-right ml-2"></i>
+      <Slider ref={sliderRef} {...settings}>
+        {services.map((service, index) => (
+          <div key={index} className="hover:scale-105 duration-300 w-[350px] h-[350px] text-black flex-col p-6 rounded-2xl shadow-lg hover:shadow-2xl">
+            <div className="p-4 w-[55px] flex items-center justify-center rounded-lg mb-4 bg-[#F0F5FF]">
+              <i className="fas fa-database text-[#0B63E5]"></i>
+            </div>
+            <div className="h-[80%]">
+              <h3 className="text-xl font-semibold mb-2 leading-tight">{service.title}</h3>
+              <p className="text-gray-600 mb-4">{service.shortDescription}</p>
+            </div>
+            <div className="flex align-bottom h-[2%] items-end">
+              <button className="text-blue-600 hover:underline" onClick={() => redirect(`/services/${service.slug}`)}>
+                Learn More
               </button>
             </div>
           </div>
-          <div className="bg-white hover:scale-105 duration-300 text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl flex items-start">
-            <div className="mr-4"></div>
-            <div>
-              <h3 className="text-xl font-semibold mb-2">
-                Mobile App Development
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-                posuere cubilia curae; Nam nec tortor massa. Praesent cursus
-                porttitor egestas.
-              </p>
-              <button
-                onClick={() => redirect("/services/mobile")}
-                className="text-blue-600 hover:underline flex items-center"
-              >
-                Learn More <i className="fas fa-arrow-right ml-2"></i>
-              </button>
-            </div>
-          </div>
-          <div className="bg-white hover:scale-105 duration-300 text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl flex items-start">
-            <div className="mr-4"></div>
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Web Development</h3>
-              <p className="text-gray-600 mb-4">
-                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-                posuere cubilia curae; Nam nec tortor massa. Praesent cursus
-                porttitor egestas.
-              </p>
-              <button
-                onClick={() => redirect("/services/web")}
-                className="text-blue-600 hover:underline flex items-center"
-              >
-                Learn More <i className="fas fa-arrow-right ml-2"></i>
-              </button>
-            </div>
-          </div>
-          <div className="bg-white hover:scale-105 duration-300 text-black p-6 rounded-2xl shadow-lg hover:shadow-2xl flex items-start">
-            <div className="mr-4"></div>
-            <div>
-              <h3 className="text-xl font-semibold mb-2">
-                E-Commerce Solutions
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-                posuere cubilia curae; Nam nec tortor massa. Praesent cursus
-                porttitor egestas.
-              </p>
-              <button
-                onClick={() => redirect("/services/e-commerce")}
-                className="text-blue-600 hover:underline flex items-center"
-              >
-                Learn More <i className="fas fa-arrow-right ml-2"></i>
-              </button>
-            </div>
-          </div>
-        </div>
+        ))}
+      </Slider>
+      <div className="text-center hidden absolute lg:flex justify-center gap-x-5 -mt-5 " style={{ width: "67.5vw" }}>
+        <button className="button p-3 rounded-lg hover:scale-105 duration-300 bg-[#F0F5FF]" onClick={previous}>
+          <img src={arrow} alt="" />
+        </button>
+        <button className="button p-3 rounded-lg hover:scale-105 duration-300 bg-[#F0F5FF]" onClick={next}>
+          <img src={arrow} className="rotate-180" alt="" />
+        </button>
       </div>
-      <style>{`
-        .bg-[#094FB7] {
-          clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-        }
-      `}</style>
     </div>
   );
 };
