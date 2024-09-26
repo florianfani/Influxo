@@ -1,6 +1,5 @@
 {
   "name": "influxo",
-  "homepage": ".",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -25,9 +24,6 @@
     "sweetalert2": "^11.14.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.2",
-    "@babel/preset-env": "^7.25.4",
-    "@babel/preset-react": "^7.24.7",
     "@eslint/js": "^9.9.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
