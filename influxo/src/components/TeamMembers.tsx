@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import teamMembers from "../assets/teamMembers";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -21,15 +21,15 @@ import arrow from "../assets/decorations/ArrowLeft.svg";
  * @type {React.FC}
  */
 const TeamMembers = () => {
-    const sliderRef = useRef(null);
+    const sliderRef = useRef<Slider | null>(null); // Define the type of sliderRef
 
-    const next = () => {
+    const handleNext = () => {
         if (sliderRef.current) {
             sliderRef.current.slickNext();
         }
     };
 
-    const previous = () => {
+    const handlePrevious = () => {
         if (sliderRef.current) {
             sliderRef.current.slickPrev();
         }
@@ -89,10 +89,10 @@ const TeamMembers = () => {
                 ))}
             </Slider>
             <div className="text-center flex justify-center ml-9 md:ml-0 gap-x-5 mt-5" style={{ width: "67.5vw" }}>
-                <button className="button p-3 rounded-lg hover:scale-105 duration-300 bg-[#F0F5FF]" onClick={previous}>
+                <button className="button p-3 rounded-lg hover:scale-105 duration-300 bg-[#F0F5FF]" onClick={handlePrevious}>
                     <img src={arrow} alt="Previous" />
                 </button>
-                <button className="button p-3 rounded-lg hover:scale-105 duration-300 bg-[#F0F5FF]" onClick={next}>
+                <button className="button p-3 rounded-lg hover:scale-105 duration-300 bg-[#F0F5FF]" onClick={handleNext}>
                     <img src={arrow} className="rotate-180" alt="Next" />
                 </button>
             </div>
