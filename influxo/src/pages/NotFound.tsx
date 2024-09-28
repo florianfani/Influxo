@@ -16,7 +16,7 @@ export const NotFound: React.FC = () => {
           <br />
           OPPS! PAGE NOT FOUND
         </h1>
-        <p className="text-lg text-gray-600 mt-4">Something went wrong. It’s look that your requested could not be found. It's look like the link is broken or the page is removed.</p>
+        <p className="text-lg text-gray-600 mt-4">Something went wrong. It looks like your requested link could not be found. It looks like the link is broken or the page is removed.</p>
         <button className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300" onClick={() => redirect("/")}>
           Back Home
         </button>
