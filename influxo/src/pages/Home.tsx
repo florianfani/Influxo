@@ -33,7 +33,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="">
-      <div className="min-h-screen bg-white flex flex-col items-center overflow-hidden">
+      <div className="min-h-screen bg-white flex flex-col items-center overflow-hidden pb-56 lg:pb-0">
         <div className="z-10 w-full mx-auto px-[8%] xl:px-[16%] py-12 flex flex-col lg:flex-row items-center justify-between">
           {/* Left Section */}
           <div className="lg:w-1/2">
