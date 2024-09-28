@@ -26,7 +26,7 @@ const SingleProductPage: React.FC = () => {
           {product ? (
             <div className="">
               <div className="flex flex-col md:flex-row">
-                <div className="md:w-1/2 pr-20 max-h-[300px]">
+                <div className="md:w-1/2 pr-20 lg:max-h-[300px]">
                   <span className="text-sm">Creative Direction / UI/UX / Website Design / Icon Design</span>
                   <h1 className="text-2xl font-bold mb-4">{product.title}</h1>
                   <p className="text-md text-[#42526B] mb-6">{product.shortDescription}</p>
