@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import WorkTogether from "../components/WorkTogether";
 import projects from "../assets/projects"; // Import the projects
+import ServicesSlider from "../components/ServicesSlider";
 
 const SingleProductPage: React.FC = () => {
   const { id } = useParams();
@@ -12,11 +13,24 @@ const SingleProductPage: React.FC = () => {
     details: string;
     image: string;
     longDescription: string;
+    tech: string;
   } | null>(null);
 
   useEffect(() => {
     const product = projects.find((product) => product.id === parseInt(id || "0"));
-    setProduct(product || null);
+    if (product) {
+      setProduct({
+        id: product.id,
+        title: product.title,
+        shortDescription: product.shortDescription,
+        details: product.details,
+        image: product.image,
+        longDescription: product.longDescription,
+        tech: Array.isArray(product.tech) ? product.tech.join(', ') : product.tech || "",
+      });
+    } else {
+      setProduct(null);
+    }
   }, [id]);
 
   return (
@@ -40,6 +54,10 @@ const SingleProductPage: React.FC = () => {
                 <div>
                   <p className="text-md text-[#42526B] mb-6">{product.longDescription}</p>
                   <p className="text-md text-[#42526B] mb-6">{product.details}</p>
+                </div>
+                <div className="">
+                  <ServicesSlider techImages={product.tech.split(', ')} />
+
                 </div>
               </div>
             </div>

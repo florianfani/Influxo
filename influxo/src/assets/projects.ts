@@ -10,6 +10,7 @@ const projects = [
     servicesUsed: ["Web Development", "UI/UX Design", "SEO"],
     details:
       "Less Doing, More Living was a conference about productivity and entrepreneurship hosted by Ari Meisel, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.",
+    tech: ["/images/go.jpg", "/images/react.jpg", "/images/docker.jpg", "/images/figma.jpg", "/images/node.jpg", "/images/vercel.jpg"]
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ const projects = [
     servicesUsed: ["Web Development", "UI/UX Design", "SEO"],
     details:
       "Less Doing, More Living was a conference about productivity and entrepreneurship hosted by Ari Meisel, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”. two.",
+    tech: ["/images/go.jpg", "/images/react.jpg", "/images/docker.jpg", "/images/figma.jpg", "/images/node.jpg", "/images/vercel.jpg"]
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ const projects = [
     servicesUsed: ["Web Development", "UI/UX Design", "SEO"],
     details:
       "Less Doing, More Living was a conference about productivity and entrepreneurship hosted by Ari Meisel, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”. three.",
+    tech: ["/images/go.jpg", "/images/react.jpg", "/images/docker.jpg", "/images/figma.jpg", "/images/node.jpg", "/images/vercel.jpg"]
   },
   {
     id: 4,
@@ -46,6 +49,7 @@ const projects = [
     servicesUsed: ["Web Development", "UI/UX Design", "SEO"],
     details:
       "Less Doing, More Living was a conference about productivity and entrepreneurship hosted by Ari Meisel, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”. four.",
+    tech: ["/images/go.jpg", "/images/react.jpg", "/images/docker.jpg", "/images/figma.jpg", "/images/node.jpg", "/images/vercel.jpg"]
   },
   {
     id: 5,
@@ -58,6 +62,7 @@ const projects = [
     servicesUsed: ["Web Development", "UI/UX Design", "SEO"],
     details:
       "Less Doing, More Living was a conference about productivity and entrepreneurship hosted by Ari Meisel, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”. five.",
+    tech: ["/images/go.jpg", "/images/react.jpg", "/images/docker.jpg", "/images/figma.jpg", "/images/node.jpg", "/images/vercel.jpg"]
   },
   {
     id: 6,
@@ -70,6 +75,7 @@ const projects = [
     servicesUsed: ["Web Development", "UI/UX Design", "SEO"],
     details:
       "Less Doing, More Living was a conference about productivity and entrepreneurship hosted by Ari Meisel, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”. six.",
+    tech: ["/images/go.jpg", "/images/react.jpg", "/images/docker.jpg", "/images/figma.jpg", "/images/node.jpg", "/images/vercel.jpg"]
   },
   {
     id: 7,
@@ -82,6 +88,7 @@ const projects = [
     servicesUsed: ["Web Development", "UI/UX Design", "SEO"],
     details:
       "Less Doing, More Living was a conference about productivity and entrepreneurship hosted by Ari Meisel, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”. seven.",
+    tech: ["/images/go.jpg", "/images/react.jpg", "/images/docker.jpg", "/images/figma.jpg", "/images/node.jpg", "/images/vercel.jpg"]
   },
   {
     id: 8,
@@ -94,6 +101,7 @@ const projects = [
     servicesUsed: ["Web Development", "UI/UX Design", "SEO"],
     details:
       "Less Doing, More Living was a conference about productivity and entrepreneurship hosted by Ari Meisel, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”. eight.",
+    tech: ["/images/go.jpg", "/images/react.jpg", "/images/docker.jpg", "/images/figma.jpg", "/images/node.jpg", "/images/vercel.jpg"]
   },
   {
     id: 9,
@@ -106,6 +114,7 @@ const projects = [
     servicesUsed: ["Web Development", "UI/UX Design", "SEO"],
     details:
       "Less Doing, More Living was a conference about productivity and entrepreneurship hosted by Ari Meisel, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”. nine.",
+    tech: ["/images/go.jpg", "/images/react.jpg", "/images/docker.jpg", "/images/figma.jpg", "/images/node.jpg", "/images/vercel.jpg"]
   },
   {
     id: 10,
@@ -118,6 +127,7 @@ const projects = [
     servicesUsed: ["Web Development", "UI/UX Design", "SEO"],
     details:
       "Less Doing, More Living was a conference about productivity and entrepreneurship hosted by Ari Meisel, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”.el, author of two bestselling books: “The Art of Less Doing” and “The Replaceable Founder”. ten.",
+    tech: ["/images/go.jpg", "/images/react.jpg", "/images/docker.jpg", "/images/figma.jpg", "/images/node.jpg", "/images/vercel.jpg"]
   },
 ];
 
