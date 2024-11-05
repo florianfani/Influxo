@@ -17,19 +17,25 @@ const SingleProductPage: React.FC = () => {
   } | null>(null);
 
   useEffect(() => {
-    const product = projects.find((product) => product.id === parseInt(id || "0"));
-    if (product) {
-      setProduct({
-        id: product.id,
-        title: product.title,
-        shortDescription: product.shortDescription,
-        details: product.details,
-        image: product.image,
-        longDescription: product.longDescription,
-        tech: Array.isArray(product.tech) ? product.tech.join(', ') : product.tech || "",
-      });
+    const parsedId = parseInt(id || "0");
+    // Check if the id is a valid number and matches the original id
+    if (!isNaN(parsedId) && id === parsedId.toString()) {
+      const product = projects.find((product) => product.id === parsedId);
+      if (product) {
+        setProduct({
+          id: product.id,
+          title: product.title,
+          shortDescription: product.shortDescription,
+          details: product.details,
+          image: product.image,
+          longDescription: product.longDescription,
+          tech: Array.isArray(product.tech) ? product.tech.join(', ') : product.tech || "",
+        });
+      } else {
+        setProduct(null);
+      }
     } else {
-      setProduct(null);
+      setProduct(null); // Set to null if id is invalid
     }
   }, [id]);
 
