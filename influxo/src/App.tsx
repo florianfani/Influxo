@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import ContactForm from "./pages/ContactUs";
@@ -11,9 +11,17 @@ import Services from "./pages/Services";
 import SingleService from "./pages/SingleService";
 import { NotFound } from "./pages/NotFound";
 
+const routes = [
+  { path: "/", element: <Home /> },
+  { path: "/contact", element: <ContactForm /> },
+  { path: "/projects", element: <Projects /> },
+  { path: "/projects/:id", element: <SingleProductPage /> },
+  { path: "/services", element: <Services /> },
+  { path: "/services/:slug", element: <SingleService /> },
+  { path: "/about", element: <About /> }
+];
+
 function AppContent() {
-  const location = useLocation();
-  const isNotFound = !["/", "/contact", "/projects", "/projects/:id", "/services", "/services/:slug", "/about"].includes(location.pathname);
 
   return (
     <div className="w-full">
@@ -22,16 +30,11 @@ function AppContent() {
       </div>
       <div className="md:pt-24">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<ContactForm />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/:id" element={<SingleProductPage />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/:slug" element={<SingleService />} />
-          <Route path="/about" element={<About />} />
-          {/* Remove NotFound route from here */}
+          {routes.map(route => (
+            <Route key={route.path} path={route.path} element={route.element} />
+          ))}
+          <Route path="*" element={<NotFound />} />
         </Routes>
-        {isNotFound && <NotFound />}
       </div>
       <div>
         <Footer />

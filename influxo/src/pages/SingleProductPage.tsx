@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import WorkTogether from "../components/WorkTogether";
 import projects from "../assets/projects"; // Import the projects
+import ServicesSlider from "../components/ServicesSlider";
 
 const SingleProductPage: React.FC = () => {
   const { id } = useParams();
@@ -12,13 +13,33 @@ const SingleProductPage: React.FC = () => {
     details: string;
     image: string[];
     longDescription: string;
+    tech: string;
   } | null>(null);
 
   useEffect(() => {
-    const product = projects.find(
-      (product) => product.id === parseInt(id || "0")
-    );
-    setProduct(product || null);
+    const parsedId = parseInt(id || "0");
+
+    // Check if the id is a valid number and matches the original id
+    if (!isNaN(parsedId) && id === parsedId.toString()) {
+      const product = projects.find((product) => product.id === parsedId);
+      if (product) {
+        setProduct({
+          id: product.id,
+          title: product.title,
+          shortDescription: product.shortDescription,
+          details: product.details,
+          image: product.image,
+          longDescription: product.longDescription,
+          tech: Array.isArray(product.tech)
+            ? product.tech.join(", ")
+            : product.tech || "",
+        });
+      } else {
+        setProduct(null);
+      }
+    } else {
+      setProduct(null); // Set to null if id is invalid
+    }
   }, [id]);
 
   return (
@@ -30,7 +51,7 @@ const SingleProductPage: React.FC = () => {
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/2 pr-20 lg:max-h-[300px]">
                   <span className="text-sm">
-                    Creative Direction / UI/UX / Website Design /
+                    Creative Direction / UI/UX / Website Design / Icon Design
                   </span>
                   <h1 className="text-2xl font-bold mb-4">{product.title}</h1>
                   <p className="text-md text-[#42526B] mb-6">
@@ -41,7 +62,7 @@ const SingleProductPage: React.FC = () => {
                   <img
                     src={product.image[0]}
                     alt={product.title}
-                    className="md:w-[600px] h-[400px] max-h-[450px] object-cover"
+                    className="md:w-[600px] h-[300px] max-h-[450px] object-cover"
                   />
                 </div>
               </div>
@@ -58,6 +79,9 @@ const SingleProductPage: React.FC = () => {
                   <p className="text-md text-[#42526B] mb-6">
                     {product.details}
                   </p>
+                </div>
+                <div className="">
+                  <ServicesSlider techImages={product.tech.split(", ")} />
                 </div>
               </div>
             </div>

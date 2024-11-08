@@ -2,7 +2,7 @@ const services = [
   {
     title: "Web-Development",
     slug: "Web-Development",
-    image: "/images/ServiceIcon2.svg",
+    image: "/images/webdev.jpg",
     shortDescription:
       "Custom, responsive websites designed to reflect your brand and optimized for all devices. Our Website Development service encompasses the entire process, from conceptualization to launch. We focus on creating visually stunning and highly functional websites that engage visitors and drive conversions. Our team works closely with you to understand your business objectives, target audience, and unique selling points. We ensure that every element, from layout to content, aligns with your brand’s identity. Our sites are built using modern technologies that guarantee fast loading times and seamless performance across all devices, enhancing the user experience. Additionally, we implement SEO best practices from the ground up to improve visibility and attract organic traffic. ",
     longDescription:
