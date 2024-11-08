@@ -47,7 +47,8 @@ const ServicesHome: React.FC = () => {
       return (
         <div>
           <ul style={{ display: "flex", justifyContent: "center" }}>
-            {React.Children.toArray(dots).slice(start, end)} {/* Show 5 dots based on the current slide */}
+            {React.Children.toArray(dots).slice(start, end)}{" "}
+            {/* Show 5 dots based on the current slide */}
           </ul>
         </div>
       );
@@ -112,24 +113,39 @@ const ServicesHome: React.FC = () => {
   return (
     <div className="px-[8%] xl:px-[16%]">
       <div className="flex flex-col lg:flex-row justify-between mb-8">
-        <h2 className="text-3xl font-bold mb-5 lg:mb-0">Explore our influxo team services.</h2>
-        <button className="bg-[#F0F5FF] text-[#0B63E5] font-bold py-2 px-4 rounded-lg w-[200px] hover:bg-blue-600 hover:text-white text-center text-md duration-300" onClick={() => redirect(`services`)}>
+        <h2 className="text-3xl font-bold mb-5 lg:mb-0">
+          Explore our influxo team services.
+        </h2>
+        <button
+          className="bg-[#F0F5FF] text-[#0B63E5] font-bold py-2 px-4 rounded-lg w-[200px] hover:bg-blue-600 hover:text-white text-center text-md duration-300"
+          onClick={() => redirect(`services`)}
+        >
           View All Services
           <i className="fas fa-arrow-right text-sm ml-2"></i>
         </button>
       </div>
       <Slider ref={sliderRef} {...settings}>
         {services.map((service, index) => (
-          <div key={index} className="hover:scale-105 duration-300 w-[350px] h-[350px] text-black flex-col p-6 rounded-2xl shadow-lg hover:shadow-2xl">
+          <div
+            key={index}
+            className="hover:scale-105 duration-300 w-[350px] h-[350px] text-black flex-col p-6 rounded-2xl shadow-lg hover:shadow-2xl"
+          >
             <div className="p-4 w-[55px] flex items-center justify-center rounded-lg mb-4 bg-[#F0F5FF]">
               <i className="fas fa-database text-[#0B63E5]"></i>
             </div>
             <div className="h-[80%]">
-              <h3 className="text-xl font-semibold mb-2 leading-tight">{service.title}</h3>
-              <p className="text-gray-600 mb-4">{service.shortDescription}</p>
+              <h3 className="text-xl font-semibold mb-2 leading-tight">
+                {service.title}
+              </h3>
+              <p className="text-gray-600 mb-4  line-clamp-5">
+                {service.shortDescription}
+              </p>
             </div>
             <div className="flex align-bottom h-[2%] items-end">
-              <button className="text-blue-600 hover:underline" onClick={() => redirect(`/services/${service.slug}`)}>
+              <button
+                className="text-blue-600 hover:underline"
+                onClick={() => redirect(`/services/${service.slug}`)}
+              >
                 Learn More
               </button>
             </div>
@@ -137,10 +153,16 @@ const ServicesHome: React.FC = () => {
         ))}
       </Slider>
       <div className="text-center hidden absolute lg:flex justify-center gap-x-5 -mt-5 w-[85vw] xl:w-[67.5vw]">
-        <button className="button p-3 rounded-lg hover:scale-105 duration-300 bg-[#F0F5FF]" onClick={previous}>
+        <button
+          className="button p-3 rounded-lg hover:scale-105 duration-300 bg-[#F0F5FF]"
+          onClick={previous}
+        >
           <img src={arrow} alt="" />
         </button>
-        <button className="button p-3 rounded-lg hover:scale-105 duration-300 bg-[#F0F5FF]" onClick={next}>
+        <button
+          className="button p-3 rounded-lg hover:scale-105 duration-300 bg-[#F0F5FF]"
+          onClick={next}
+        >
           <img src={arrow} className="rotate-180" alt="" />
         </button>
       </div>
