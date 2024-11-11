@@ -45,11 +45,13 @@ const SingleService: React.FC = () => {
             <div className="w-full flex flex-col md:flex-row">
               <div className="md:w-1/2 w-full">
                 <h1 className="text-3xl font-bold mb-5">{service?.title}</h1>
-                <p className="text-[#6A778B] mb-5">{service?.shortDescription}</p>
+                <p className="text-[#6A778B] mb-5">
+                  {service?.shortDescription}
+                </p>
               </div>
               <div className="md:w-1/2 w-full flex justify-end items-center">
                 <img
-                  src={service?.image} // Replace with your image URL
+                  src={service?.image}
                   alt="Service"
                   className="md:w-[80%] w-full object-cover h-auto max-h-[300px]"
                 />
@@ -61,18 +63,6 @@ const SingleService: React.FC = () => {
       ) : (
         <h2>No service found</h2>
       )}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-6">
-        {service?.technologies && service.technologies.length > 0 ? (
-          service.technologies.map((tech, index) => (
-            <div key={index} className="text-center flex flex-col items-center justify-center">
-              <h2 className="text-[28px] font-bold mb-3">{tech.title}</h2>
-              <p className="text-[#6A778B] text-[20px] w-[80%]">{tech.description}</p>
-            </div>
-          ))
-        ) : (
-          <h2>No technologies found</h2>
-        )}
-      </div>
     </div>
   );
 };
