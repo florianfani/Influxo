@@ -13,6 +13,7 @@ const SingleProductPage: React.FC = () => {
     details: string;
     image: string[];
     longDescription: string;
+    servicesUsed: string[];
     tech: string;
   } | null>(null);
 
@@ -28,6 +29,7 @@ const SingleProductPage: React.FC = () => {
           title: product.title,
           shortDescription: product.shortDescription,
           details: product.details,
+          servicesUsed: product.servicesUsed,
           image: product.image,
           longDescription: product.longDescription,
           tech: Array.isArray(product.tech)
@@ -51,7 +53,7 @@ const SingleProductPage: React.FC = () => {
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/2 pr-20 lg:max-h-[300px]">
                   <span className="text-sm">
-                    Creative Direction / UI/UX / Website Design / Icon Design
+                    {product.servicesUsed.join(" / ")}
                   </span>
                   <h1 className="text-2xl font-bold mb-4">{product.title}</h1>
                   <p className="text-md text-[#42526B] mb-6">
@@ -62,16 +64,11 @@ const SingleProductPage: React.FC = () => {
                   <img
                     src={product.image[0]}
                     alt={product.title}
-                    className="md:w-[600px] h-[300px] max-h-[450px] object-cover"
+                    className="md:w-[600px] h-[500px] max-h-[450px] object-contain"
                   />
                 </div>
               </div>
               <div className="flex flex-col gap-4 py-16">
-                <img
-                  src={product.image[1]}
-                  alt={product.title}
-                  className="w-full max-h-[425px] object-cover my-20"
-                />
                 <div>
                   <p className="text-md text-[#42526B] mb-6">
                     {product.longDescription}

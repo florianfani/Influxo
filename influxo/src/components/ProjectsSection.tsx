@@ -9,6 +9,9 @@ interface ProjectsSectionProps {
 
 const ProjectsSection: React.FC<ProjectsSectionProps> = ({ amount }) => {
   const navigate = useNavigate();
+  const redirectProjects = (path: string) => {
+    navigate(path);
+  };
 
   const redirect = (id: number) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -18,7 +21,19 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ amount }) => {
   return (
     <div className="mt-32">
       <div className="projects-wrapper px-[8%] lg:px-[16%] py-10">
-        <h2 className="text-4xl font-bold mb-8">Our featured projects</h2>
+        <div className="flex flex-col lg:flex-row justify-between mb-8">
+          <h2 className="text-3xl font-bold mb-5 lg:mb-0">
+            Our featured projects
+          </h2>
+          <button
+            className="bg-[#F0F5FF] text-[#0B63E5] font-bold py-2 px-4 rounded-lg w-[200px] hover:bg-blue-600 hover:text-white text-center text-md duration-300"
+            onClick={() => redirectProjects(`projects`)}
+          >
+            View All Projects
+            <i className="fas fa-arrow-right text-sm ml-2"></i>
+          </button>
+        </div>
+
         <div className="flex flex-col justify-center items-center gap-16 mt-16">
           {projects.slice(0, amount).map((project, index) => (
             <div
@@ -45,7 +60,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ amount }) => {
                     {project.title}
                   </h3>
                   <p className="text-gray-600 mb-4 lg:max-h-[400px] lg:overflow-auto">
-                    {project.longDescription}
+                    {project.shortDescription}
                   </p>
                   <button
                     className="bg-[#F0F5FF] text-[#0B63E5] font-bold py-2 px-4 rounded-lg w-[200px] hover:bg-blue-600 hover:text-white text-center text-md duration-300"
