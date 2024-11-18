@@ -59,16 +59,16 @@ const TeamMembers: React.FC = () => {
               <img src={member.image} alt={member.name} className="w-full h-64 rounded-t-lg mb-4 object-cover" />
               <div className="justify-center gap-4 mb-4 absolute top-[60%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="flex justify-center gap-3">
-                  <a href={member.social.facebook} className="text-white hover:text-gray-900 text-2xl p-2 rounded-md bg-[rgba(0,0,0,0.5)]  hover:bg-[rgba(255,255,255,0.5)]  shadow-md">
+                  <a href={member.social.facebook} target="_blank" className="text-white hover:text-gray-900 text-2xl p-2 rounded-md bg-[rgba(0,0,0,0.5)]  hover:bg-[rgba(255,255,255,0.5)]  shadow-md">
                     <i className="fab fa-facebook"></i>
                   </a>
-                  <a href={member.social.instagram} className="text-white hover:text-gray-900 text-2xl p-2 rounded-md bg-[rgba(0,0,0,0.5)]  hover:bg-[rgba(255,255,255,0.5)] shadow-md">
+                  <a href={member.social.instagram} target="_blank" className="text-white hover:text-gray-900 text-2xl p-2 rounded-md bg-[rgba(0,0,0,0.5)]  hover:bg-[rgba(255,255,255,0.5)] shadow-md">
                     <i className="fab fa-instagram"></i>
                   </a>
-                  <a href={member.social.twitter} className="text-white hover:text-gray-900 text-2xl p-2 rounded-md bg-[rgba(0,0,0,0.5)]  hover:bg-[rgba(255,255,255,0.5)] shadow-md">
+                  <a href={member.social.twitter} target="_blank" className="text-white hover:text-gray-900 text-2xl p-2 rounded-md bg-[rgba(0,0,0,0.5)]  hover:bg-[rgba(255,255,255,0.5)] shadow-md">
                     <i className="fab fa-twitter"></i>
                   </a>
-                  <a href={member.social.linkedin} className="text-white hover:text-gray-900 text-2xl p-2 rounded-md bg-[rgba(0,0,0,0.5)]  hover:bg-[rgba(255,255,255,0.5)] shadow-md">
+                  <a href={member.social.linkedin} target="_blank" className="text-white hover:text-gray-900 text-2xl p-2 rounded-md bg-[rgba(0,0,0,0.5)]  hover:bg-[rgba(255,255,255,0.5)] shadow-md">
                     <i className="fab fa-linkedin"></i>
                   </a>
                 </div>
