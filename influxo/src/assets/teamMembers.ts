@@ -1,4 +1,3 @@
-
 const teamMembers = [
     {
         name: "Artis Ademi",
