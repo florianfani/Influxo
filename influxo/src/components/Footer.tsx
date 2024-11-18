@@ -129,7 +129,7 @@ export const Footer: React.FC = () => {
             </div>
             <div className="text-sm font-medium max-w-[80%] lg:max-w-full flex gap-x-2 items-center bg-[#0E76A8] rounded-md text-[#FFFFFF] px-3 py-2 cursor-pointer hover:opacity-90 transform hover:scale-105 duration-300">
               <i className="fab fa-linkedin"></i>
-              <a href="#" target="_blank">
+              <a href="https://www.linkedin.com/company/influxo-dev/" target="_blank">
                 Linkedin
               </a>
             </div>

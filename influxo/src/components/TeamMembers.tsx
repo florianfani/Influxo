@@ -74,24 +74,28 @@ const TeamMembers: React.FC = () => {
                 <div className="flex justify-center gap-3">
                   <a
                     href={member.social.facebook}
+                    target="_blank"
                     className="text-white hover:text-gray-900 text-2xl p-2 rounded-md bg-[rgba(0,0,0,0.5)]  hover:bg-[rgba(255,255,255,0.5)]  shadow-md"
                   >
                     <i className="fab fa-facebook"></i>
                   </a>
                   <a
                     href={member.social.instagram}
+                    target="_blank"
                     className="text-white hover:text-gray-900 text-2xl p-2 rounded-md bg-[rgba(0,0,0,0.5)]  hover:bg-[rgba(255,255,255,0.5)] shadow-md"
                   >
                     <i className="fab fa-instagram"></i>
                   </a>
                   <a
                     href={member.social.twitter}
+                    target="_blank"
                     className="text-white hover:text-gray-900 text-2xl p-2 rounded-md bg-[rgba(0,0,0,0.5)]  hover:bg-[rgba(255,255,255,0.5)] shadow-md"
                   >
                     <i className="fab fa-twitter"></i>
                   </a>
                   <a
                     href={member.social.linkedin}
+                    target="_blank"
                     className="text-white hover:text-gray-900 text-2xl p-2 rounded-md bg-[rgba(0,0,0,0.5)]  hover:bg-[rgba(255,255,255,0.5)] shadow-md"
                   >
                     <i className="fab fa-linkedin"></i>
